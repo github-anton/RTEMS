@@ -1,0 +1,14 @@
+diff -Naur gcc-4.9.3/gcc/config/mips/t-rtems gcc-4.9.3-p0/gcc/config/mips/t-rtems
+--- gcc-4.9.3/gcc/config/mips/t-rtems	2014-01-03 02:23:26.000000000 +0400
++++ gcc-4.9.3-p0/gcc/config/mips/t-rtems	2017-12-22 11:39:39.836518985 +0300
+@@ -26,8 +26,8 @@
+ MULTILIB_EXCEPTIONS =
+ 
+ # Big endian only
+-MULTILIB_EXCEPTIONS += EL*
+-MULTILIB_EXCEPTIONS += mips32/EL*
++# MULTILIB_EXCEPTIONS += EL*
++# MULTILIB_EXCEPTIONS += mips32/EL*
+ 
+ # Little endian only
+ MULTILIB_EXCEPTIONS += mips3

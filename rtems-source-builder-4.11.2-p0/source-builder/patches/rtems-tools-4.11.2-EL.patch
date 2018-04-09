@@ -1,0 +1,11 @@
+diff -Nur rtems-tools-4.11.2/rtemstoolkit/rld-cc.cpp rtems-tools-4.11.2-p0/rtemstoolkit/rld-cc.cpp
+--- rtems-tools-4.11.2/rtemstoolkit/rld-cc.cpp	2017-03-28 04:25:45.000000000 +0300
++++ rtems-tools-4.11.2-p0/rtemstoolkit/rld-cc.cpp	2018-01-17 15:53:24.150385792 +0300
+@@ -113,6 +113,7 @@
+           { fg_machine, "-O",       1, false, 0 },
+           { fg_machine, "-m",       1, false, 0 },
+           { fg_machine, "-f",       1, false, 0 },
++          { fg_machine, "-EL",      0, false, 0 },
+           { fg_specs,   "-q",       1, false, 0 },
+           { fg_specs,   "-B",       2, true,  0 },
+           { fg_specs,   "--specs",  2, false, 0 }
