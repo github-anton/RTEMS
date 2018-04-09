@@ -1,0 +1,216 @@
+/*
+ *  Based on BSP for MIPS malta and sources mct03pem for Linux
+ */
+
+/*
+ *  COPYRIGHT (c) 1989-2012.
+ *  On-Line Applications Research Corporation (OAR).
+ *  Copyright 2018, Anton Ermakov
+ *
+ *  The license and distribution terms for this file may be
+ *  found in the file LICENSE in this distribution or at
+ *  http://www.rtems.org/license/LICENSE.
+ */
+
+#include <rtems.h>
+#include <stdlib.h>
+#include <bsp/irq-generic.h>
+#include <bsp.h>
+#include <bsp/irq.h>
+
+void mips_default_isr( int vector );
+void mips_vector_isr_handlers( CPU_Interrupt_frame *frame );
+int bsp_get_qstr_irq(int qstr_no) ;
+int bsp_get_qstr_no(int irq) ;
+int bsp_get_qstr_bit(int irq) ;
+mc_reg_t bsp_get_qstr(int qstr_no) ;
+mc_reg_t *bsp_get_maskr_addr(int qstr_no) ;
+int bsp_get_qstr_irq_base(int qstr_no) ;
+
+#include <rtems/bspIo.h>  /* for printk */
+
+#define DEBUG
+#include <bsp/aux.h>
+
+void mips_vector_isr_handlers( CPU_Interrupt_frame *frame )
+{
+    unsigned int sr;
+    unsigned int cause;
+    unsigned int pending;
+    int i ;
+
+    mips_get_sr( sr );
+    mips_get_cause( cause );
+
+    pending = (cause & sr & 0xff00) >> CAUSE_IPSHIFT;
+  
+    /* SW Bits */
+    /*if ( pending & 0x01) {
+        printk("Pending IRQ_SW0 0x%x\n", pending );
+    }
+
+    if ( pending & 0x02) {
+        printk("Pending IRQ_SW1 0x%x\n", pending );
+    }
+    */
+  
+    // Handle the QSTR interrupts
+    for (i = 0; i < 5; i++) {
+        if ( pending & ( 0x04 << i ) ) {
+            int qstr_irq_base = bsp_get_qstr_irq_base(i) ;
+            mc_reg_t *p_maskr = bsp_get_maskr_addr(i) ;
+            int qstr_bit = -1 ;
+            do {
+                qstr_bit = bsp_get_qstr_irq_bit(i, qstr_bit + 1) ;
+                if ( ( (*p_maskr) >> irq ) & 1 ) {
+                    bsp_interrupt_handler_dispatch( qstr_bit + qstr_irq_base ) ;
+                    //DTRACEK("QSTR%i bit%i IRQ%i occured\n", qstr_no, irq, irq + qstr_irq_base) ;
+                } else {
+                    //DTRACEK("QSTR%i bit%i IRQ%i occured, masked\n", qstr_no, irq, irq + qstr_irq_base) ;
+                }
+            } while (qstr_bit >= 0) ;
+        }
+    }
+  
+    // Handle the ticker interupt
+    if ( pending & 0x80 ) {
+        bsp_interrupt_handler_dispatch( MC1892_INT_TICKER );
+    }
+}
+
+void mips_default_isr( int vector )
+{
+  unsigned int sr;
+  unsigned int cause;
+
+  mips_get_sr( sr );
+  mips_get_cause( cause );
+
+  printk( "Unhandled isr exception: vector 0x%02x, cause 0x%08X, sr 0x%08X\n",
+      vector, cause, sr );
+
+  while(1);      /* Lock it up */
+
+  rtems_fatal_error_occurred(1);
+}
+
+int bsp_get_qstr_irq_bit(int qstr_no, int start_bit) {
+    int irq ;
+    mc_reg_t qstr = bsp_get_qstr(qstr_no);
+    
+    if ( qstr == 0x0 ) {
+        return -1 ;
+    }
+    
+    for (irq = start_bit; irq < (sizeof(mc_reg_t)*8); irq++) {
+        if ( ( qstr >> irq ) & 1 ) {
+            return ( irq ) ;
+        }
+    }
+    return -1 ;
+}
+
+int bsp_get_qstr_no(int irq) {
+    //DTRACEK("irq=%i, MC1892_QSTR0_IRQ_START=%i, sizeof(mc_reg_t)=%i\n", irq, MC1892_QSTR0_IRQ_START, sizeof(mc_reg_t)) ;
+    return (irq - (MC1892_QSTR0_IRQ_START)) / (sizeof(mc_reg_t)*8) ;
+}
+
+int bsp_get_qstr_bit(int irq) {
+    return (irq - (MC1892_QSTR0_IRQ_START)) % (sizeof(mc_reg_t)*8) ;
+}
+
+void bsp_disable_irq(int irq) {
+    int qstr_no = bsp_get_qstr_no(irq) ;
+    mc_reg_t *p_maskr = bsp_get_maskr_addr(qstr_no) ;
+    int qstr_bit = bsp_get_qstr_bit(irq) ;
+    
+    if(p_maskr != NULL) {
+        *p_maskr = (0xffffffff ^ (1 << qstr_bit)) & (*p_maskr) ;
+    }
+    
+    DTRACEK("irq%i, maskr%i=0x%x, bit%i\n", irq, qstr_no, *p_maskr, qstr_bit) ;
+}
+
+void bsp_enable_irq(int irq) {
+    int qstr_no = bsp_get_qstr_no(irq) ;
+    mc_reg_t *p_maskr = bsp_get_maskr_addr(qstr_no) ;
+    int qstr_bit = bsp_get_qstr_bit(irq) ;
+    
+    if(p_maskr != NULL) {
+        *p_maskr = (1 << qstr_bit) | (*p_maskr) ;
+    }
+    
+    DTRACEK("irq%i, maskr%i=0x%x, bit%i\n", irq, qstr_no, *p_maskr, qstr_bit) ;
+}
+
+mc_reg_t bsp_get_qstr(int qstr_no) {
+    mc_reg_t qstr ;
+    switch( qstr_no ) {
+        case 0:
+            qstr = MC_QSTR0 ;
+            break;
+        case 1:
+            qstr = MC_QSTR1 ;
+            break;
+        case 2:
+            qstr = MC_QSTR2 ;
+            break;
+        case 3:
+            qstr = MC_QSTR3 ;
+            break;
+        case 4:
+            qstr = MC_QSTR4 ;
+            break;
+        default:
+            qstr = 0x0 ;
+    }
+    return qstr ;
+}
+
+mc_reg_t *bsp_get_maskr_addr(int maskr_no) {
+    mc_reg_t *p_maskr ;
+    switch( maskr_no ) {
+        case 0:
+            p_maskr = &MC_MASKR0 ;
+            break;
+        case 1:
+            p_maskr = &MC_MASKR1 ;
+            break;
+        case 2:
+            p_maskr = &MC_MASKR2 ;
+            break;
+        case 3:
+            p_maskr = &MC_MASKR3 ;
+            break;
+        case 4:
+            p_maskr = &MC_MASKR4 ;
+            break;
+        default:
+            p_maskr = NULL ;
+    }
+    return p_maskr ;
+}
+
+int bsp_get_qstr_irq_base(int qstr_no) {
+    int qstr_irq_base ;
+    switch( qstr_no ) {
+        case 0:
+            qstr_irq_base = MC1892_QSTR0_IRQ_START ;
+            break;
+        case 1:
+            qstr_irq_base = MC1892_QSTR1_IRQ_START ;
+            break;
+        case 2:
+            qstr_irq_base = MC1892_QSTR2_IRQ_START ;
+            break;
+        case 3:
+            qstr_irq_base = MC1892_QSTR3_IRQ_START ;
+            break;
+        case 4:
+            qstr_irq_base = MC1892_QSTR4_IRQ_START ;
+            break;
+        default:
+            return qstr_irq_base = -1 ;
+    }
+    return qstr_irq_base ;
+}
