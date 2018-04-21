@@ -1,0 +1,11 @@
+# Examples:
+
+$RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=malta --enable-posix
+
+# Compile only samples
+$RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=mct03pem --enable-posix --enable-tests=samples
+
+# Compile all test
+$RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=mct03pem --enable-posix --enable-tests=yes
+
+make
