@@ -1,0 +1,26 @@
+*** BEGIN OF TEST Multicore SpaceWire C++ ***
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007B4E8
+vectorisrs.c: bsp_disable_irq(): irq108, maskr2=0xF7F7F7E7, bit4
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F7F767, bit7
+vectorisrs.c: bsp_disable_irq(): irq110, maskr2=0xF7F7F727, bit6
+mcspw.c: mcspw_open(): MASKR2 = F7F7F727, QSTR2 = 00000000
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302
+mcspw.c: mcspw_open(): Done
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x1
+mcspw.c: spw_struct_init(): spw_struct_init, port = 1
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8008BF28
+vectorisrs.c: bsp_disable_irq(): irq116, maskr2=0xF7F7E727, bit12
+vectorisrs.c: bsp_disable_irq(): irq119, maskr2=0xF7F76727, bit15
+vectorisrs.c: bsp_disable_irq(): irq118, maskr2=0xF7F72727, bit14
+mcspw.c: mcspw_open(): MASKR2 = F7F72727, QSTR2 = 00000000
+mcspw.c: spw_start(): TX_SPEED(1) = 00A00302
+mcspw.c: mcspw_open(): Done
+CMcSpaceWire_test2.cpp: main(): CONNECTED
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_write(): === channel = 0, size = 4096
+mcspw.c: mcspw_write(): spw_write: channel 0 not connected, wait for connection
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302
+ 
