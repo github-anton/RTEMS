@@ -1,0 +1,23 @@
+send/receive reply are in the same thread (sync)
+mk3(Linux)
+mc(RTEMS)
+
+1.
+writer mk3: gap = 20ms,  deltaSendReceive = 4.6-5.0 ms
+
+2.
+writer mk3: gap = 20ms,  deltaSendReceive = 4.6-9.0(seldom) ms
+writer mc:  gap = 20ms,   deltaSendReceive = 4.0-9.0(seldom) ms
+
+3.
+writer mk3: gap = 20ms,  deltaSendReceive = 4.5-9.0(seldom) ms (somtimes reader on port2 became to be DISCONNECTED, the connection is automaticly restored)
+writer mc:  gap = 0ms,   deltaSendReceive = 4.0-10(seldom) ms
+
+4.
+writer mk3: gap = 0ms,  deltaSendReceive = 4.6-8.8(seldom) ms (constantly reader on port2 became to be DISCONNECTED, the connection is automaticly restored)
+writer mc:  gap = 0ms,   deltaSendReceive = 4.0-9.0-11.0(very seldom)
+
+5.
+writer mk3: gap = 0ms,  deltaSendReceive = 4.6-5.0 ms (constantly reader on port2 became to be DISCONNECTED, the connection is automaticly restored)
+
+writers speed = 10Mb/s

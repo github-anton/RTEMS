@@ -1,0 +1,11 @@
+send/receive reply are in the same thread (sync)
+mk3(Linux) writer
+mc(RTEMS) writer, reader (silent)
+
+1. writer mc:   gap = 20 ms, deltaSendReceive = 5 ms
+
+2. writer mc:   gap = 0 ms, deltaSendReceive = 5-6 ms
+
+4.
+writer mk3: gap = 0ms,  deltaSendReceive = unknown, no reply
+writer mc:  gap = 0ms,   deltaSendReceive = 5-9 ms

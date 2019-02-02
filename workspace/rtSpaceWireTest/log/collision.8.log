@@ -1,0 +1,16 @@
+mk3(Linux) writer, reader
+mc(RTEMS) writer (silent)
+
+1.
+writer mk3: gap = 20ms,  deltaSendReceive = 4.6-4.9 ms
+
+2.
+writer mk3: gap = 0ms,  deltaSendReceive = 4.6-4.9 ms
+
+4.
+writer mk3: gap = 0ms,  deltaSendReceive = unknown, reply is disabled
+writer mc:  gap = 0ms,   deltaSendReceive = 9-11 ms
+
+6.
+writer mk3: gap = 0ms,  deltaSendReceive = 11.9-13.8 ms (often reader on port2 became to be DISCONNECTED, the connection is automaticly restored)
+writer mc:  gap = 0ms,   deltaSendReceive = unknown, reply is disabled

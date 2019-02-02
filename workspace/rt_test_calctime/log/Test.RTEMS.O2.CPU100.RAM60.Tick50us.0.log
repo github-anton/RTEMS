@@ -1,0 +1,32 @@
+Добро пожаловать в minicom 2.7.1
+
+ПАРАМЕТРЫ: I18n 
+Дата компиляции Apr 13 2018, 08:09:10.
+Port /dev/ttyUSB1, 16:32:46
+
+Нажмите CTRL-A Z для получения подсказки по клавишам
+
+Clock_mask: 8000
+
+
+*** BEGIN OF TEST Polina's calculation time. ***
+
+ClockTime deltas:
+                Iteration #0
+@polis_proc@ took 950 microseconds (gettime)
+                Iteration #1
+@polis_proc@ took 213650 microseconds (gettime)
+                Iteration #2
+@polis_proc@ took 213300 microseconds (gettime)
+                Iteration #3
+@polis_proc@ took 213550 microseconds (gettime)
+                Iteration #4
+@polis_proc@ took 213400 microseconds (gettime)
+                Iteration #5
+@polis_proc@ took 212850 microseconds (gettime)
+                Iteration #6
+@polis_proc@ took 212900 microseconds (gettime)
+                Iteration #7
+@polis_proc@ took 212800 microseconds (gettime)
+calctime1:  main, exiting
+*** END OF TEST Polina's calculation time. *** 

@@ -1,0 +1,11 @@
+*** BEGIN OF TEST CONSOLE IO TEST ***
+Type some characters, they must appear twice:
+ddfsasassssssssdddddffffgggdcccsssssssssssssssssssddddddddddUnhandled exception 39
+                                                                                  sr: 0x2000FF03  cause: 0x000080t
+ 
+
+ *** BEGIN OF TEST CONSOLE IO TEST ***
+Type some characters, they must appear twice:
+kjlkjlkjlkha;skdjUnhandled exception 39we;lfkj';weljf'lwehf'opiwje'fowefwefwefwewkgjhwkgjhw;lkgwre
+                                       sr: 0x2000FF03  cause: 0x00008000 --> Int
+                        

@@ -1,0 +1,19 @@
+send/reply are in the different threads (async)
+speed = 10Mb/s
+threads have the same priority
+mk3(Linux)
+mc(RTEMS)
+
+1.
+writer mk3: gap = 0ms, deltaSendReceive = 580 ms
+
+2.
+writer mk3: gap = 0ms, deltaSendReceive = 1000 ms
+writer mc:  gap = 0ms, deltaSendReceive = 120-150 ms
+
+3.
+writer mk3: gap = 20ms, deltaSendReceive = 4.8 ms
+
+4.
+writer mk3: gap = 20ms, deltaSendReceive = 4.8-10(seldom) ms
+writer mc:  gap = 20ms, deltaSendReceive = 10-30-40(seldom) ms

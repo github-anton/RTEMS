@@ -1,0 +1,24 @@
+router - niisiran
+mk3(Linux) writer, reader
+mc(RTEMS) writer (silent)
+
+1.
+writer mk3: gap = 20ms,  deltaSendReceive = 5.9-6.1 ms
+
+2.
+writer mk3: gap = 0ms,  deltaSendReceive = 5.9-6.1 ms
+
+3.
+writer mk3: gap = 0ms,  deltaSendReceive =  5.9-11.4 ms
+writer mc:  gap = 0ms,   deltaSendReceive = unknown, reply is disabled
+ 
+4.
+writer mk3: gap = 20ms,  deltaSendReceive =  5.9-11.4(seldom) ms
+writer mc:  gap = 20ms,   deltaSendReceive = unknown, reply is disabled
+
+5.
+writer mc:  gap = 0ms,   deltaSendReceive = 6-7(seldom) ms
+
+6.
+writer mk3: gap = 0ms,  deltaSendReceive = unknown, reply is disabled
+writer mc:  gap = 0ms,   deltaSendReceive = 6(seldom)-7(seldom)-17-18ms

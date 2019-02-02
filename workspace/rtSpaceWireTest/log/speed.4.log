@@ -1,0 +1,21 @@
+
+Добро пожаловать в minicom 2.7.1
+
+ПАРАМЕТРЫ: I18n 
+Дата компиляции Apr 13 2018, 08:09:10.
+Port /dev/ttyUSB1, 14:18:25
+
+Нажмите CTRL-A Z для получения подсказки по клавишам
+
+Clock_mask: 8000
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***
+CMcSpaceWire_speedTest.cpp: main(): Waiting for connection...
+CMcSpaceWire_speedTest.cpp: main(): CONNECTED
+CMcSpaceWire_speedTest.cpp: main(): Setting up speed to 50Mbit/s
+CMcSpaceWire_speedTest.cpp: main(): setTxSpeed() returned 0
+CMcSpaceWire_speedTest.cpp: main(): Calculating speed...
+
+
+ 

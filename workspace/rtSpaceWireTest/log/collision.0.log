@@ -1,0 +1,25 @@
+send/receive reply are in the same thread (sync)
+mk3(Linux)
+mc(RTEMS)
+
+1.
+writer mk3: gap = 20ms,  deltaSendReceive = 2.5(most)-3 ms
+
+2.
+writer mk3: gap = 20ms,  deltaSendReceive = 2.5(most)-5 ms
+writer mc:  gap = 20ms,   deltaSendReceive = 10(most)-30 ms
+
+3.
+writer mk3: gap = 20ms,  deltaSendReceive = 2.5(most)-8 ms
+writer mc:  gap = 0ms,   deltaSendReceive = 10(most)-30 ms
+
+4.
+writer mk3: gap = 0ms,  deltaSendReceive = 2.5(most)-8 ms (stops after a while)
+writer mc:  gap = 0ms,   deltaSendReceive = 10(most)-30-40(very seldom) ms
+
+5.
+writer mk3: gap = 0ms,  deltaSendReceive = 2.5(most)-3 ms
+
+writers speed = 200Mb/s, reader speed = 10Mb/s
+writers speed = 10Mb/s, reader speed = 10Mb/s
+results are the same

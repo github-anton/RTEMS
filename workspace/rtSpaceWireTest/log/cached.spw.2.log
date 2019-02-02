@@ -1,0 +1,74 @@
+Добро пожаловать в minicom 2.7.1                                                                                        
+
+ПАРАМЕТРЫ: I18n                                                                                                         
+Дата компиляции Apr 13 2018, 08:09:10.                                                                                  
+Port /dev/ttyUSB1, 16:57:12                                                                                             
+
+Нажмите CTRL-A Z для получения подсказки по клавишам                                                                    
+
+Clock_mask: 8000                                                                                                        
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                             
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x1, path=/dev/spw1) returned 0x0                             
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                           
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x1                                                                    
+mcspw.c: spw_struct_init(): spw_struct_init, port = 1                                                                   
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8008DB38                                               
+mcspw.c: mcspw_open(): MASKR2 = F7F725F7, QSTR2 = 00000000                                                              
+mcspw.c: spw_start(): TX_SPEED(1) = 00A00302                                                                            
+mcspw.c: mcspw_open(): Done                                                                                             
+CMcSpaceWire_speedTest.cpp: main(): Waiting for connection...                                                           
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED reqmcspw.c: spw_connected_ih(): Connected, channel: 1, STATUS = 00043AA0
+mcspw.c: start_dma(): start_dma 0xD800, dma_idx = 0
+mcspw.c: start_dma(): pcur->chain_addr = 8008DB38
+mcspw.c: start_dma(): First CSR in chain: 00003001
+mcspw.c: start_dma(): start_dma 0xD840, dma_idx = 0
+mcspw.c: start_dma(): pcur->chain_addr = 00000000
+mcspw.c: start_dma(): pcur->buf = 8008DC38
+uest, spw_connected() return 0x0
+CMcSpaceWire_speedTest.cpp: main(): CONNECTED
+CMcSpaceWire_speedTest.cpp: main(): Calculating speed...
+mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1
+mcspw.c: mcspw_read(): === channel = 1
+mcspw.c: mcspw_read(): === spw_read, channel = 1, no data
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD800) = 00003001, second empty: 1, dma idx: 00
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD840) = 0FFF2001, second empty: 1, dma idx: 00
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001
+mcspw.c: mcspw_read(): === spw_read, channel = 1,mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RU0
+mcspw.c: start_dma(): start_dma 0xD840, dma_idx = 1
+mcspw.c: start_dma(): pcur->chain_addr = 00000000
+mcspw.c: start_dma(): pcur->buf = 80095C38
+ waiting done
+mcspw.c: mcspw_read(): === spw_read, chanmcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD8400
+nel = 1, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = FFFFE000, RX DATA DMA CSR = FFFF2000
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = FFFF2000, RX DATA DMA CSR = FFFF2000
+
+mdb> show cp0.config
+cp0.config: 0x80060183  Has Config1 AT = MIPS32 AR: 1 K0: 3 MMU Type: Fixed

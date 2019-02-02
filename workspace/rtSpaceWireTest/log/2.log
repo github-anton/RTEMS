@@ -1,0 +1,45 @@
+Добро пожаловать в minicom 2.7.1                                                                                  
+
+ПАРАМЕТРЫ: I18n                                                                                                   
+Дата компиляции Apr 18 2017, 16:33:55.                                                                            
+Port /dev/ttyUSB1, 15:54:31                                                                                       
+
+Нажмите CTRL-A Z для получения подсказки по клавишам                                                              
+
+Clock_mask: 8000                                                                                                  
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                       
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x1, path=/dev/spw1) returned 0x0                       
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                     
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                              
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                             
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007B0B8                                         
+mcspw.c: mcspw_open(): MASKR2 = F7F7F7F7, QSTR2 = 00000000
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x1
+mcspw.c: spw_struct_init(): spw_struct_init, port = 1
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8008BAF8
+mcspw.c: mcspw_open(): MASKR2 = F7F7F7F7, QSTR2 = 00000000
+mcspw.c: spw_start(): TX_SPEED(1) = 00A00302
+CMcSpaceWire_test2.cpp: main(): CONNECTED
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_write(): === channel = 0, size = 4096
+mcspw.c: mcspw_write(): MASKR2 = F7F7F7F7, prev tx_desc = 00000000
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = 00000000, TX_DESC_CSR = FFFF8000, channel 0
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 8007A838, TX_DESC_IR = 8007A838, channel 0
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 irq0 occured
+mcspw.c: spw_connected_ih(): Connected, channel: 0, STATUS = 000432A0
+mcspw.c: start_dma(): start_dma 0xC800, dma_idx = 0
+mcspw.c: start_dma(): pcur->chain_addr = 8007B0B8
+mcspw.c: start_dma(): First CSR in chain: 00003001
+mcspw.c: start_dma(): start_dma 0xC840, dma_idx = 0
+mcspw.c: start_dma(): pcur->chain_addr = 00000000
+mcspw.c: start_dma(): pcur->buf = 8007B1B8
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 irq6 occured
+Unhandled exception 110
+                       sr: 0x2000FF03  cause: 0x00001000 --> Int
+                       

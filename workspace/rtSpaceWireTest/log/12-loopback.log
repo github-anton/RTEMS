@@ -1,0 +1,238 @@
+Добро пожаловать в minicom 2.7.1                                                                                  
+
+ПАРАМЕТРЫ: I18n                                                                                                   
+Дата компиляции Apr 18 2017, 16:33:55.                                                                            
+Port /dev/ttyUSB1, 14:06:11                                                                                       
+
+Нажмите CTRL-A Z для получения подсказки по клавишам                                                              
+
+Clock_mask: 8000                                                                                                  
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                       
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x1, path=/dev/spw1) returned 0x0                       
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                     
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                              
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                             
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007B658                                         
+vectorisrs.c: bsp_disable_irq(): irq108, maskr2=0xF7F7F7E7, bit4                                                  
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F7F767, bit7                                                  
+vectorisrs.c: bsp_disable_irq(): irq110, maskr2=0xF7F7F727, bit6                                                  
+vectorisrs.c: bsp_disable_irq(): irq106, maskr2=0xF7F7F723, bit2                                                  
+vectorisrs.c: bsp_disable_irq(): irq105, maskr2=0xF7F7F721, bit1                                                  
+mcspw.c: mcspw_open(): MASKR2 = F7F7F721, QSTR2 = 00000000                                                        
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302                                                                      
+mcspw.c: mcspw_open(): Done                                                                                       
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x1                                                              
+mcspw.c: spw_struct_init(): spw_struct_init, port = 1                                                             
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8008C098                                         
+vectorisrs.c: bsp_disable_irq(): irq116, maskr2=0xF7F7E721, bit12                                                 
+vectorisrs.c: bsp_disable_irq(): irq119, maskr2=0xF7F76721, bit15                                                 
+vectorisrs.c: bsp_disable_irq(): irq118, maskr2=0xF7F72721, bit14                                                 
+vectorisrs.c: bsp_disable_irq(): irq114, maskr2=0xF7F72321, bit10                                                 
+vectorisrs.c: bsp_disable_irq(): irq113, maskr2=0xF7F72121, bit9                                                  
+mcspw.c: mcspw_open(): MASKR2 = F7F72121, QSTR2 = 00000000                                                        
+mcspw.c: spw_start(): TX_SPEED(1) = 00A00302                                                                      
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured                                                      
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit0 IRQ104 occured                                                       
+mcspw.c: spw_connected_ih(): Connected, channel: 0, STATUS = 00043AA0                                             
+mcspw.c: start_dma(): start_dma 0xC800, dma_idx = 0                                                               
+mcspw.c: start_dma(): pcur->chain_addr = 8007B658                                                                 
+mcspw.c: start_dma(): First CSR in chain: 00003001                                                                
+mcspw.c: start_dma(): start_dma 0xC840, dma_idx = 0                                                               
+mcspw.c: start_dma(): pcur->chain_addr = 00000000                                                                 
+mcspw.c: start_dma(): pcur->buf = 8007B758                                                                        
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured                                                      
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit8 IRQ112 occured                                                       
+mcspw.c: spw_connected_ih(): Connected, channel: 1, STATUS = 00043AA0                                             
+mcspw.c: start_dma(): start_dma 0xD800, dma_idx = 0                                                               
+mcspw.c: start_dma(): pcur->chain_addr = 8008C098                                                                 
+mcspw.c: start_dma(): First CSR in chain: 00003001                                                                
+mcspw.c: start_dma(): start_dma 0xD840, dma_idx = 0                                                               
+mcspw.c: start_dma(): pcur->chain_addr = 00000000                                                                 
+mcspw.c: start_dma(): pcur->buf = 8008C198                                                                        
+mcspw.c: mcspw_open(): Done                                                                                       
+CMcSpaceWire_test2.cpp: main(): CONNECTED                                                                         
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...                                                  
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                             
+mcspw.c: mcspw_write(): === channel = 0, size = 4096                                                              
+mcspw.c: mcspw_write(): MASKR2 = F7F72121, prev tx_desc = 00000000                                                
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = 00000000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured                                                      
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6 IRQ110 occured, masked                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7 IRQ111 occured                                                       
+vectorisrs.c: bsp_enable_irq(): irq111, maskr2=0xF7F721A1, bit7                                                   
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F72121, bit7                                                  
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFF2000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096                                         
+CMcSpaceWire.cpp: sendTo(): write() returned 4096                                                                 
+CMcSpaceWire_test2.cpp: main(): -> Sending is OK                                                                  
+CMcSpaceWire_test2.cpp: main(): First sent 16 bytes:                                                              
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): <- Receiving packet...mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1        
+mcspw.c: mcspw_read(): === channel = 1                                                                            
+mcspw.c: mcspw_read(): === spw_read, processing packet                                                            
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: mcspw_read(): pdata = 8008C198                                                                           
+mcspw.c: avail_size(): avail_size: sz = 4096, DMA CSR = 0DFF2001, IR = 0008D198, addr = 0008C198                  
+mcspw.c: mcspw_read(): avail_size = 4096, rest = 4096                                                             
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: move_reader_p(): move_reader_p, distance = 4096, size_to_end = 32768                                     
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 64                                           
+mcspw.c: mcspw_read(): === spw_read exit, channel = 1, completed = 4096                                           
+CMcSpaceWire.cpp: recv(): read() returned 4096                                                                    
+CMcSpaceWire_test2.cpp: main(): <- Receiving is OK, len=4096                                                      
+CMcSpaceWire_test2.cpp: main(): Received first 16 bytes:                                                          
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): CONNECTED                                                                         
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...                                                  
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                             
+mcspw.c: mcspw_write(): === channel = 0, size = 4096                                                              
+mcspw.c: mcspw_write(): MASKR2 = F7F72121, prev tx_desc = A0001000                                                
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFFE000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured                                                      
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6 IRQ110 occured, masked                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7 IRQ111 occured                                                       
+vectorisrs.c: bsp_enable_irq(): irq111, maskr2=0xF7F721A1, bit7                                                   
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F72121, bit7                                                  
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFF2000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096                                         
+CMcSpaceWire.cpp: sendTo(): write() returned 4096                                                                 
+CMcSpaceWire_test2.cpp: main(): -> Sending is OK                                                                  
+CMcSpaceWire_test2.cpp: main(): First sent 16 bytes:                                                              
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): <- Receiving packet...mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1        
+mcspw.c: mcspw_read(): === channel = 1                                                                            
+mcspw.c: mcspw_read(): === spw_read, processing packet                                                            
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: mcspw_read(): pdata = 8008D198                                                                           
+mcspw.c: avail_size(): avail_size: sz = 4096, DMA CSR = 0BFF2001, IR = 0008E198, addr = 0008D198                  
+mcspw.c: mcspw_read(): avail_size = 4096, rest = 4096                                                             
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: move_reader_p(): move_reader_p, distance = 4096, size_to_end = 28672                                     
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 56                                           
+mcspw.c: mcspw_read(): === spw_read exit, channel = 1, completed = 4096                                           
+CMcSpaceWire.cpp: recv(): read() returned 4096                                                                    
+CMcSpaceWire_test2.cpp: main(): <- Receiving is OK, len=4096                                                      
+CMcSpaceWire_test2.cpp: main(): Received first 16 bytes:                                                          
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): CONNECTED                                                                         
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...                                                  
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                             
+mcspw.c: mcspw_write(): === channel = 0, size = 4096                                                              
+mcspw.c: mcspw_write(): MASKR2 = F7F72121, prev tx_desc = A0001000                                                
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFFE000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured                                                      
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6 IRQ110 occured, masked                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7 IRQ111 occured                                                       
+vectorisrs.c: bsp_enable_irq(): irq111, maskr2=0xF7F721A1, bit7                                                   
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F72121, bit7                                                  
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFF2000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096                                         
+CMcSpaceWire.cpp: sendTo(): write() returned 4096                                                                 
+CMcSpaceWire_test2.cpp: main(): -> Sending is OK                                                                  
+CMcSpaceWire_test2.cpp: main(): First sent 16 bytes:                                                              
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): <- Receiving packet...mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1        
+mcspw.c: mcspw_read(): === channel = 1                                                                            
+mcspw.c: mcspw_read(): === spw_read, processing packet                                                            
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: mcspw_read(): pdata = 8008E198                                                                           
+mcspw.c: avail_size(): avail_size: sz = 4096, DMA CSR = 09FF2001, IR = 0008F198, addr = 0008E198                  
+mcspw.c: mcspw_read(): avail_size = 4096, rest = 4096                                                             
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: move_reader_p(): move_reader_p, distance = 4096, size_to_end = 24576                                     
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 48                                           
+mcspw.c: mcspw_read(): === spw_read exit, channel = 1, completed = 4096                                           
+CMcSpaceWire.cpp: recv(): read() returned 4096                                                                    
+CMcSpaceWire_test2.cpp: main(): <- Receiving is OK, len=4096                                                      
+CMcSpaceWire_test2.cpp: main(): Received first 16 bytes:                                                          
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): CONNECTED                                                                         
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...                                                  
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                             
+mcspw.c: mcspw_write(): === channel = 0, size = 4096                                                              
+mcspw.c: mcspw_write(): MASKR2 = F7F72121, prev tx_desc = A0001000                                                
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFFE000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured                                                      
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6 IRQ110 occured, masked                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7 IRQ111 occured                                                       
+vectorisrs.c: bsp_enable_irq(): irq111, maskr2=0xF7F721A1, bit7                                                   
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F72121, bit7                                                  
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFF2000, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0                         
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0                            
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096                                         
+CMcSpaceWire.cpp: sendTo(): write() returned 4096                                                                 
+CMcSpaceWire_test2.cpp: main(): -> Sending is OK                                                                  
+CMcSpaceWire_test2.cpp: main(): First sent 16 bytes:                                                              
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): <- Receiving packet...mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1        
+mcspw.c: mcspw_read(): === channel = 1                                                                            
+mcspw.c: mcspw_read(): === spw_read, processing packet                                                            
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: mcspw_read(): pdata = 8008F198                                                                           
+mcspw.c: avail_size(): avail_size: sz = 4096, DMA CSR = 07FF2001, IR = 00090198, addr = 0008F198                  
+mcspw.c: mcspw_read(): avail_size = 4096, rest = 4096                                                             
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13                                                 
+mcspw.c: move_reader_p(): move_reader_p, distance = 4096, size_to_end = 20480                                     
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13                                                  
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 40                                           
+mcspw.c: mcspw_read(): === spw_read exit, channel = 1, completed = 4096                                           
+CMcSpaceWire.cpp: recv(): read() returned 4096                                                                    
+CMcSpaceWire_test2.cpp: main(): <- Receiving is OK, len=4096                                                      
+CMcSpaceWire_test2.cpp: main(): Received first 16 bytes:                                                          
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA                                     
+CMcSpaceWire_test2.cpp: main(): CONNECTED                                                                         
+CMcSpaceWire_test2.cpp: main(): -> Sending a packet size=4096...                                                  
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                             
+mcspw.c: mcspw_write(): === channel = 0, size = 4096
+mcspw.c: mcspw_write(): MASKR2 = F7F72121, prev tx_desc = A0001000
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFFE000, TX_DESC_CSR = FFFF8000, channel 0
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0
+vectorisrs.c: mips_vector_isr_handlers(): QSTR2 IRQs occured
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6 IRQ110 occured, masked
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7 IRQ111 occured
+vectorisrs.c: bsp_enable_irq(): irq111, maskr2=0xF7F721A1, bit7
+vectorisrs.c: bsp_disable_irq(): irq111, maskr2=0xF7F72121, bit7
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFF2000, TX_DESC_CSR = FFFF8000, channel 0
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007ADD8, TX_DESC_IR = 0007ADD8, channel 0
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096
+CMcSpaceWire.cpp: sendTo(): write() returned 4096
+CMcSpaceWire_test2.cpp: main(): -> Sending is OK
+CMcSpaceWire_test2.cpp: main(): First sent 16 bytes:
+0x60 0xC2 0x9 0x80 0x60 0xC2 0x9 0x80 0xFF 0xEF 0xFF 0x63 0xB3 0xB7 0xEB 0xDA 
+CMcSpaceWire_test2.cpp: main(): <- Receiving packet...mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1
+mcspw.c: mcspw_read(): === channel = 1
+mcspw.c: mcspw_read(): === spw_read, processing packet
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121, bit13
+mcspw.c: mcspw_read(): pdata = 80090198
+mcspw.c: avail_size(): avail_size: sz = 4096, DMA CSR = 05FF2001, IR = 00091198, addr = 00090198
+mcspw.c: mcspw_read(): avail_size = 4096, rest = 4096
+vectorisrs.c: bsp_enable_irq(): irq117, maskr2=0xF7F72121, bit13
+vectorisrs.c: bsp_disable_irq(): irq117, maskr2=0xF7F70121,
+
