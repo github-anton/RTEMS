@@ -1,0 +1,5 @@
+example:
+
+../source-builder/sb-set-builder --log=l-mips.txt --prefix=$HOME/Software/RTEMS/host/4.11 4.11/rtems-mips
+
+../source-builder/sb-set-builder --log=l-mipsel.txt --prefix=$HOME/Software/RTEMS/host/4.11 4.11/rtems-mipsel
