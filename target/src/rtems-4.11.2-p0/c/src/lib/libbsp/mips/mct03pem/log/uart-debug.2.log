@@ -1,0 +1,17 @@
+mdb> bp 0 BSP_com_outch match=eq count=0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x54        # T
+mdb> run
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x68        # h
+mdb> run
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x69        # i
+mdb> run
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x73        # s

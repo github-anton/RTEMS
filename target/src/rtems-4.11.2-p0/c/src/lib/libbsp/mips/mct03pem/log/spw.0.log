@@ -1,0 +1,168 @@
+Добро пожаловать в minicom 2.7.1                                                                                        
+
+ПАРАМЕТРЫ: I18n                                                                                                         
+Дата компиляции Apr 13 2018, 08:09:10.                                                                                  
+Port /dev/ttyUSB1, 12:52:51                                                                                             
+
+Нажмите CTRL-A Z для получения подсказки по клавишам                                                                    
+
+Clock_mask: 8000                                                                                                        
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                             
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x1, path=/dev/spw1) returned 0x0                             
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                           
+***Multicore SapceWire test***                                                                                          
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x1                                                                    
+mcspw.c: spw_struct_init(): spw_struct_init, port = 1                                                                   
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8008DD28                                               
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F7E7F7 bit12                                                        
+vectorisrs.c: bsp_disable_irq(): irq119, MASKR2=0xF7F767F7 bit15                                                        
+vectorisrs.c: bsp_disable_irq(): irq118, MASKR2=0xF7F727F7 bit14                                                        
+vectorisrs.c: bsp_disable_irq(): irq114, MASKR2=0xF7F723F7 bit10                                                        
+vectorisrs.c: bsp_disable_irq(): irq113, MASKR2=0xF7F721F7 bit9                                                         
+mcspw.c: mcspw_open(): MASKR2 = F7F721F7, QSTR2 = 00000000                                                              
+mcspw.c: spw_start(): TX_SPEED(1) = 00A00302                                                                            
+mcspw.c: mcspw_open(): Done                                                                                             
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                                    
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                                   
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007D2E8                                               
+vectorisrs.c: bsp_disable_irq(): irq108, MASKR2=0xF7F721E7 bit4                                                         
+vectorisrs.c: bsp_disable_irq(): irq111, MASKR2=0xF7F72167 bit7                                                         
+vectorisrs.c: bsp_disable_irq(): irq110, MASKR2=0xF7F72127 bit6                                                         
+vectorisrs.c: bsp_disable_irq(): irq106, MASKR2=0xF7F72123 bit2                                                         
+vectorisrs.c: bsp_disable_irq(): irq105, MASKR2=0xF7F72121 bit1                                                         
+mcspw.c: mcspw_open(): MASKR2 = F7F72121, QSTR2 = 00000000                                                              
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302                                                                            
+mcspw.c: mcspw_open(): Done                                                                                             
+CMcSpaceWire_test.cpp: readerProc(): Start reading...                                                                   
+mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1                                                                    
+mcspw.c: mcspw_read(): === channel = 1                                                                                  
+mcspw.c: mcspw_read(): === spw_read, channel = 1, no data                                                               
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD800) = 00000000, second empty: 1, dma idx: 00
+mcspw.c: start_dma(): start_dma 0xD800, dma_idx = 1                                                                     
+mcspw.c: start_dma(): pcur->chain_addr = 8008DDA8                                                                       
+mcspw.c: start_dma(): First CSR in chain: 00003001                                                                      
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD840) = 00000000, second empty: 1, dma idx: 00
+mcspw.c: start_dma(): start_dma 0xD840, dma_idx = 1                                                                     
+mcspw.c: start_dma(): pcur->chain_addr = 00000000                                                                       
+mcspw.c: start_dma(): pcur->buf = 80095E28                                                                              
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+CMcSpaceWire_test.cpp: writerProc(): Start writing...                                                                   
+CMcSpaceWire_test.cpp: writerProc(): Frame 0                                                                            
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: writerProc(): DISCONNECTED                                                                       
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                                   
+mcspw.c: mcspw_write(): === channel = 0, size = 1                                                                       
+mcspw.c: mcspw_write(): spw_write: channel 0 not connected, wait for connection                                         
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302                                                                            
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x1000, starting irq_bit=0                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x0, starting irq_bit=12                                                 
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F72121 bit12                                                        
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFE2001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x100, starting irq_bit=0                                                
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x1000, starting irq_bit=0                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x0, starting irq_bit=12                                                 
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x101, starting irq_bit=12                                               
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x101, starting irq_bit=0                                                
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit0, IRQ104 occured                                                            
+mcspw.c: spw_connected_ih(): Connected, channel: 0, STATUS = 00043AA2                                                   
+mcspw.c: spw_connected_ih(): Error detected, waiting reconnection                                                       
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x100, starting irq_bit=0                                                
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit8, IRQ112 occured                                                            
+mcspw.c: spw_connected_ih(): Connected, channel: 1, STATUS = 00043AA1                                                   
+mcspw.c: start_dma(): start_dma 0xD800, dma_idx = 1                                                                     
+mcspw.c: start_dma(): pcur->chain_addr = 8008DDA8                                                                       
+mcspw.c: start_dma(): First CSR in chain: 00003001                                                                      
+mcspw.c: start_dma(): start_dma 0xD840, dma_idx = 1                                                                     
+mcspw.c: start_dma(): pcur->chain_addr = 00000000                                                                       
+mcspw.c: start_dma(): pcur->buf = 80095E28                                                                              
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x0, starting irq_bit=8                                                  
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F72121 bit12                                                        
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F72121 bit12                                                        
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x1000, starting irq_bit=0                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x0, starting irq_bit=12                                                 
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F72121 bit12                                                        
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFE2001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x1000, starting irq_bit=0                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x0, starting irq_bit=12                                                 
+vectorisrs.c: bsp_disable_irq(): irq116,vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x1, starting irq_bit=0          
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit0, IRQ104 occured                                                            
+mcspw.c: spw_connected_ih(): Connected, channel: 0, STATUS = 00043AA1                                                   
+mcspw.c: start_dma(): start_dma 0xC800, dma_idx = 0                                                                     
+mcspw.c: start_dma(): pcur->chain_addr = 8007D2E8                                                                       
+mcspw.c: start_dma(): First CSR in chain: 00003001                                                                      
+mcspw.c: start_dma(): start_dma 0xC840, dma_idx = 0                                                                     
+mcspw.c: start_dma(): pcur->chain_addr = 00000000                                                                       
+mcspw.c: start_dma(): pcur->buf = 8007D3E8                                                                              
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x10, starting irq_bit=0                                                 
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit4, IRQ108 occured, masked                                                    
+ MASKR2=0xF7F72121 bit12                                                                                                
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = FFFF2000, RX DATA DMA CSR = 0FF32001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+mcspw.c: mcspw_write(): spw_write: channel 0, waiting for connection finished                                           
+mcspw.c: mcspw_write(): MASKR2 = F7F73121, prev tx_desc = 00000000                                                      
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = 00000000, TX_DESC_CSR = FFFF8000, channel 0                                  
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007CA68, TX_DESC_IR = 0007CA68, channel 0                               
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = FFFFE000, TX_DESC_CSR = FFFF8000, channel 0                                  
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 1                                                  
+CMcSpaceWire.cpp: sendTo(): write() returned 1                                                                          
+CMcSpaceWire_test.cpp: writerProc(): Frame 1
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x1
+CMcSpaceWire_test.cpp: writerProc(): CONNECTED
+CMcSpaceWire_test.cpp: writerProc(): -> Send a packet no=1 size=4095, first 16 bytes:
+0xF0 0xDE 0x9 0x80 0xA8 0x40 0xA 0x80 0x1B 0x51 0x47 0xD0 0xBC 0x41 0x9D 0x56 
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_write(): === channel = 0, +-------------------------------------+
+mcspw.c: mcspw_write(): MASKR2 = F7F73121|                                     |
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR |  Невозможно открыть /dev/ttyUSB1!   |nnel 0
+mcspw.c: mcspw_write(): transmit: TX_DATA|                                     |channel 0
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR +-------------------------------------+nnel 0
+vectorisrs.c: bsp_enable_irq(): irq111, MASKR2=0xF7F731A1 bit7
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0xD0, starting irq_bit=0
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit4, IRQ108 occured, masked
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6, IRQ110 occured, masked
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7, IRQ111 occured
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x50, starting irq_bit=7
+vectorisrs.c: bsp_disable_irq(): irq111, MASKR2=0xF7F73121 bit7
+mcspw.c: mcspw_write(): tp1, TX_DATA_CSR = FFFF2000, TX_DESC_CSR = FFFF8000, channel 0
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007CA68, TX_DESC_IR = 0007CA68, channel 0
+mcspw.c: mcspw_write(): tp2, TX_DATA_CSR = 00EF2001, TX_DESC_CSR = FFFF8000, channel 0
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096
+CMcSpaceWire.cpp: sendTo(): write() returned 4096
+CMcSpaceWire_test.cpp: writerProc(): Frame 2
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0
+CMcSpaceWire_test.cpp: writerProc(): DISCONNECTED
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_write(): === channel = 0, size = 1
+mcspw.c: mcspw_write(): spw_write: channel 0 not connected, wait for connection
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302 

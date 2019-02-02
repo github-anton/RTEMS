@@ -109,7 +109,7 @@ int bsp_get_qstr_irq(int qstr_no) {
     }
     
     // Reset starting IRQ point when it out of range
-    if(irq_bit > sizeof(mc_reg_t)) {
+    if(irq_bit >= sizeof(mc_reg_t)*8) {
         irq_bit = 0 ;
     }
     
@@ -123,11 +123,12 @@ int bsp_get_qstr_irq(int qstr_no) {
             }
         }
     }
+    DTRACEK("QSTR IRQ bit not found.\n") ;
     return -1 ;
 }
 
 int bsp_get_qstr_no(int irq) {
-    //DTRACEK("irq=%i, MC1892_QSTR0_IRQ_START=%i, sizeof(mc_reg_t)=%i\n", irq, MC1892_QSTR0_IRQ_START, sizeof(mc_reg_t)) ;
+    ////DTRACEK("irq=%i, MC1892_QSTR0_IRQ_START=%i, sizeof(mc_reg_t)=%i\n", irq, MC1892_QSTR0_IRQ_START, sizeof(mc_reg_t)) ;
     return (irq - (MC1892_QSTR0_IRQ_START)) / (sizeof(mc_reg_t)*8) ;
 }
 

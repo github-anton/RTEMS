@@ -1,0 +1,9 @@
+# Debug log of mct03pem RTEMS
+
+ Line Status = 0x60
+ SP_LSR_THOLD (0x20) & Line Status = 0x0
+
+ set( port, NS16550_TRANSMIT_BUFFER, out);
+ 
+ Line Status = 0x0
+ Line Status = 0x60

@@ -1,0 +1,276 @@
+# Debug log of mct03pem RTEMS
+src:
+interrupt handler is not defined
+ttyS0 -> UART0 -> /dev/ttyUSB0
+
+minicom:
+pu port             /dev/ttyUSB0
+pu rtscts           No
+
+mdb> bp 0 com_set_register match=eq count=0
+mdb> bp 1 0x80012370 match=eq count=0           // com_get_register()
+                                                // val = *ptr ;
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 0
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x3             // set Line Control
+mdb> show a2
+a2: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x3             // set Line Control
+mdb> show a2
+a2: 0x80            // set Latch Access Bit
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0               // set Transmit Buffer
+mdb> show a2
+a2: 0x1
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1        
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1        
+a1: 0x3             // set Line Control
+mdb> show a2
+a2: 0x3
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1        
+a1: 0x2             // set Interrupt ID or Fifo Control
+mdb> show a2
+a2: 0x1
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x2             // set Interrupt ID or Fifo Control
+mdb> show a2
+a2: 0x7
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x4             // set Modem Control
+mdb> show a2
+a2: 0x8
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x5             // get Line Status
+mdb> show v0
+v0: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0               // get Receive Buffer or Transmit Buffer
+mdb> show v0
+v0: 0x52            // ASCII: R
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0               // get Receive Buffer or Transmit Buffer
+mdb> show v0
+v0: 0x52            // ASCII: R
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x3             // set Line Control
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x3             // set Line Control
+mdb> show a2
+a2: 0x80
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0               // set Transmit Buffer or Receive Buffer
+mdb> show a2
+a2: 0x1
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x3             // set Line Control
+mdb> show a2
+a2: 0x3
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x2             // set Interrupt ID or Fifo Control
+mdb> show a2
+a2: 0x1
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x2             // set Interrupt ID or Fifo Control
+mdb> show a2
+a2: 0x7
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x4             // set Modem Control
+mdb> show a2
+a2: 0x8
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x5             // get Line Status
+mdb> show v0
+v0: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0x5             // get Line Status
+mdb> show v0
+v0: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0               // get Receive Buffer or Transmit Buffer
+mdb> show v0
+v0: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3400
+mdb> show a1
+a1: 0               // get Receive Buffer or Transmit Buffer
+mdb> show v0
+v0: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x4             // set Modem Control
+mdb> show a2
+a2: 0x9
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x1             // get Interrupt Enable
+mdb> show v0
+v0: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x1             // get Interrupt Enable
+mdb> show v0
+v0: 0
+
+OSCR:    0x4260 Debug mode triggered by watchpoint 0.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x1             // set Interrupt Enable
+mdb> show a2
+a2: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x5             // get Line Status
+mdb> show v0
+v0: 0
+
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+mdb> show a0
+a0: 0x3000
+mdb> show a1
+a1: 0x5
+mdb> show v0
+v0: 0

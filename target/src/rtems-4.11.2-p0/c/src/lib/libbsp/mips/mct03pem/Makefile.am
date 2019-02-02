@@ -18,6 +18,8 @@ include_bsp_HEADERS += ../../shared/include/irq-info.h
 include_bsp_HEADERS += include/irq.h
 include_bsp_HEADERS += include/aux.h
 include_bsp_HEADERS += include/mcspw.h
+# CPU cache
+include_bsp_HEADERS += include/cpu.h
 
 nodist_include_HEADERS = include/bspopts.h
 nodist_include_bsp_HEADERS = ../../shared/include/bootcard.h
@@ -81,6 +83,9 @@ libbsp_a_SOURCES += irq/interruptmask.c
 
 # mcspw
 libbsp_a_SOURCES += spw/mcspw.c
+
+# CPU cache
+libbsp_a_SOURCES += cpu/cpu.c
 
 include $(srcdir)/preinstall.am
 include $(top_srcdir)/../../../../automake/local.am

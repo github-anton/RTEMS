@@ -43,6 +43,10 @@ extern "C" {
 // Get DMA buffer status
 #define SPW_RX_IS_EMPTY             14
     
+#define SPW_GET_TIME_CODE           15
+    
+#define SPW_WAIT_TIME_CODE          16
+    
 rtems_device_driver mcspw_initialize(rtems_device_major_number major, rtems_device_minor_number minor, void *arg);
 rtems_device_driver mcspw_open(rtems_device_major_number major, rtems_device_minor_number minor, void *arg);
 rtems_device_driver mcspw_close(rtems_device_major_number major, rtems_device_minor_number minor, void *arg);

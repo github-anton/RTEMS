@@ -18,6 +18,7 @@
  * they apply.
 */
 
+#include <rtems/mips/idtcpu.h>
 #include <rtems/asm.h>
 #include <bsp/regs.h>
 
@@ -66,6 +67,15 @@ _start:
 	bal     $LF1
 	nop
 
+#ifdef BSP_ENABLE_CPU_CACHE
+    /* disable cache mode at first */
+	mfc0   v0, C0_CONFIG
+	and    v0, 0xfffffff8
+	or     v0, CFG_C_UNCACHED
+	mtc0   v0, C0_CONFIG
+	nop
+#endif
+	
 _branch:
 #if 1
 	move	$5, $31				# $5 == where are we
@@ -114,7 +124,7 @@ _start_in_ram:
 	mtc0	v0, C0_SR
 	mtc0	zero, C0_CAUSE
 	nop
-
+	
 1:
 	li	v0, SR_PE|SR_FR|SR_KX|SR_SX|SR_UX
 	mtc0	v0, C0_SR
@@ -158,10 +168,22 @@ zerobss:
 	.end	zerobss
 
 	.globl	exit .text
-	.globl	init
-	.ent	init
-init:
+	.globl	__init
+	.ent	__init
+__init:
 
+    jal init_tlb        /* clear tlb */
+    nop
+
+#ifdef BSP_ENABLE_CPU_CACHE
+    /* initialise cache mode */
+	mfc0   v0, C0_CONFIG
+	and    v0, 0xfffffff8
+	or     v0, CFG_C_NONCOHERENT
+	mtc0   v0, C0_CONFIG
+	nop
+#endif
+	
 	move	a0,zero			/* set command line to 0 */
 	jal	boot_card		/* call the program start function */
 	nop
@@ -170,7 +192,7 @@ init:
 	jal	_sys_exit		/* call libc exit to run the G++ */
 					/* destructors */
 	move	a0,v0			/* pass through the exit code */
-	.end	init
+	.end	__init
 
 /*
  * _sys_exit -- Exit from the application. Normally we cause a user trap

@@ -1,0 +1,31 @@
+ Below code causes intructions corruption right after it is complete when loads from EPROM.
+ Same register manipulation I do with mdb -u when starting from RAM.
+ 
+ /* Registers base address */
+REGBASE     =0xb82f0000
+
+/* MPORT registers offsets */
+CSCON0      =0x1000
+CSCON4      =0x1010
+SDRCON      =0x1014
+SDRTMR      =0x1018
+SDRCSR      =0x101c
+
+/* System registers offsets */
+CR_PLL      =0x4000
+CLK_EN      =0x4004
+ 
+    li $30, REGBASE
+    li $5, 0x8494       # mport (memory) 20MHz, cpu 100MHz
+    sw $5, CR_PLL($30)
+    li $5, 0xffffffff
+    sw $5, CLK_EN($30)
+    li $5, 0x3f00c0
+    sw $5, CSCON0($30)
+    li $5, 0x030d0021
+    sw $5, SDRCON($30)
+    li $5, 0x00f50223
+    sw $5, SDRTMR($30)
+    li $5, 0x1
+    sw $5, SDRCSR($30)
+    nop

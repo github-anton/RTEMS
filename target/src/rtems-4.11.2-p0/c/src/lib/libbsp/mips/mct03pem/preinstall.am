@@ -69,6 +69,10 @@ $(PROJECT_INCLUDE)/bsp/mcspw.h: include/mcspw.h $(PROJECT_INCLUDE)/bsp/$(dirstam
 	$(INSTALL_DATA) $< $(PROJECT_INCLUDE)/bsp/mcspw.h
 PREINSTALL_FILES += $(PROJECT_INCLUDE)/bsp/mcspw.h
 
+$(PROJECT_INCLUDE)/bsp/cpu.h: include/cpu.h $(PROJECT_INCLUDE)/bsp/$(dirstamp)
+	$(INSTALL_DATA) $< $(PROJECT_INCLUDE)/bsp/cpu.h
+PREINSTALL_FILES += $(PROJECT_INCLUDE)/bsp/cpu.h
+
 $(PROJECT_INCLUDE)/bspopts.h: include/bspopts.h $(PROJECT_INCLUDE)/$(dirstamp)
 	$(INSTALL_DATA) $< $(PROJECT_INCLUDE)/bspopts.h
 PREINSTALL_FILES += $(PROJECT_INCLUDE)/bspopts.h

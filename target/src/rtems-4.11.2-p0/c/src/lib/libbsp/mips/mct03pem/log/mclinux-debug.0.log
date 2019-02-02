@@ -1,0 +1,8 @@
+# Debug log of mct03pem mcLinux 
+
+mdb -u
+
+mdb> bp 0 add_serial_port match=eq count=0
+
+mdb> show mips_hpt_frequency
+mips_hpt_frequency[0x805fabe0]:             0x5f5e100

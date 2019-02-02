@@ -16,6 +16,10 @@
 #ifndef LIBBSP_MIPS_MCT03PEM_BSP_H
 #define LIBBSP_MIPS_MCT03PEM_BSP_H
 
+#if 1
+#define BSP_ENABLE_CPU_CACHE
+#endif
+
 #ifndef ASM
 
 #include <bspopts.h>
@@ -26,6 +30,7 @@
 #include <rtems/console.h>
 #include <rtems/clockdrv.h>
 #include <bsp/mcspw.h>
+#include <bsp/cpu.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -65,7 +70,6 @@ typedef volatile unsigned   mc_reg_t ;
 #define MC_R(a)		*(mc_reg_t*)(MC_BASE_ADDR + (a))
 #define MC_CRPLL	MC_R (0x4000)	/* Control of PLL */
 #define MC_CLKEN	MC_R (0x4004)	/* Управление отключением частоты от устройств */
-#define MC_CSR		MC_R (0x4008)	/* Управление и состояние */
 #define MC_MASKR0	MC_R (0x4010)	/* Interrupt mask for MC_QSTR0 */
 #define MC_QSTR0	MC_R (0x4014)	/* Interrupt requests from IT, RTT, WDT, UART[3:0], nIRQ[3:0] */
 #define MC_MASKR1	MC_R (0x4018)	/* Interrupt mask for MC_QSTR1 */

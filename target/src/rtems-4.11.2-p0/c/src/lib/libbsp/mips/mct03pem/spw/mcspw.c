@@ -1,3 +1,4 @@
+#include <rtems.h>
 #include <rtems/io.h>
 #include <rtems/rtems/intr.h>
 #include <bsp/mcspw.h>
@@ -100,26 +101,6 @@ static const char mcspw_driver_path [][MCSPW_DEV_PATH_LEN] = { "/dev/spw0", "/de
 #define MC_SWIC_ISR_L(n)	MC_R (0xC024 + ((n) << 12))	/* Регистр кодов распределенных прерываний (младшая часть) */
 #define MC_SWIC_ISR_H(n)	MC_R (0xC028 + ((n) << 12))	/* Регистр кодов распределенных прерываний (старшая часть) */
 
-/* STATUS */
-#define MC_SWIC_DC_ERR      0x00000001  /* Признак ошибки рассоединения */
-#define MC_SWIC_P_ERR       0x00000002  /* Признак ошибки четности */
-#define MC_SWIC_ESC_ERR     0x00000004  /* Признак ошибки в ESC-последовательности */
-#define MC_SWIC_CREDIT_ERR  0x00000008  /* Признак ошибки кредитования */
-#define MC_SWIC_DS_STATE    0x000000E0  /* Состояние DS-макроячейки */
-#define MC_SWIC_RX_BUF_FULL 0x00000100  /* Буфер приема полон */
-#define MC_SWIC_RX_BUF_EMPTY    0x00000200  /* Буфер приема пуст */
-#define MC_SWIC_TX_BUF_FULL 0x00000400  /* Буфер передачи полон */
-#define MC_SWIC_TX_BUF_EMPTY    0x00000800  /* Буфер передачи пуст */
-#define MC_SWIC_GOT_FIRST_BIT   0x00001000  /* Признак получения первого бита */
-#define MC_SWIC_CONNECTED   0x00002000  /* Признак установленного соединения */
-#define MC_SWIC_GOT_TIME    0x00004000  /* Принят маркер времени из сети */
-#define MC_SWIC_GOT_INT     0x00008000  /* Принят код распределенного прерывания из сети */
-#define MC_SWIC_GOT_POLL    0x00010000  /* Принят poll-код из сети */
-#define MC_SWIC_FL_CONTROL  0x00020000  /* Признак занятости передачей управляющего кода */
-#define MC_SWIC_IRQ_LINK    0x00040000  /* Состояние запроса прерырывания LINK */
-#define MC_SWIC_IRQ_TIM     0x00080000  /* Состояние запроса прерырывания TIM */
-#define MC_SWIC_IRQ_ERR     0x00100000  /* Состояние запроса прерырывания ERR */
-
 /*
  * Маски для установки отдельных полей регистров
  */
@@ -170,8 +151,10 @@ static const char mcspw_driver_path [][MCSPW_DEV_PATH_LEN] = { "/dev/spw0", "/de
 #define MC_SWIC_AUTO_TX_SPEED   0x00008000  /* Признак автоматического установления скорости передачи
                            после соединения (см. Спецификацию!!!) */
 #define MC_SWIC_LINK_MASK   0x00040000  /* Маска прерывания LINK */
-#define MC_SWIC_TIM_MASK    0x00080000  /* Маска прерывания TIM */
-#define MC_SWIC_ERR_MASK    0x00100000  /* Маска прерывания ERR */
+#define MC_SWIC_ERR_MASK    0x00080000  /* Маска прерывания TIM */
+#define MC_SWIC_TIM_MASK    0x00100000  /* Маска прерывания ERR */
+#define MC_SWIC_TCODE_MASK  0x00400000  /* Enable interrupt in case receiving a time code. */
+#define MC_SWIC_INT_MASK    0x00800000  /* Enable dIRQ */
 
 /* TX_SPEED */
 #define MC_SWIC_TX_SPEED_PRM_MASK   0xFF        /* Маска коэффициента умножения TX_PLL */
@@ -242,7 +225,7 @@ struct _spw_t {
 	double_buffer			rx_desc_buf;			// Двойной буфер приёма дескрипторов
 	double_buffer			rx_data_buf;			// Двойной буфер приёма данных
 	dma_params_t *			rx_desc_chain [2];		// Цепочки DMA для приёма дескрипторов
-	rtems_id 		stws, rxdataws, rxdescws, txws;	// Семафоры для функций старта, read и write (в режиме блокирующего ввода-вывода)
+	rtems_id 	stws, rxdataws, rxdescws, txws, time;	// Семафоры для функций старта, read и write (в режиме блокирующего ввода-вывода)
 	
 	// Буфер для дескриптора передаваемого пакета
 	spw_descriptor_t		txdescbuf __attribute__ ((aligned (8)));
@@ -270,6 +253,8 @@ static void spw_connected_ih (void *dev_id) ;
 static void spw_dma_tx_data_ih (void *dev_id) ;
 static void spw_dma_rx_desc_ih (void *dev_id) ;
 static void spw_dma_rx_data_ih (void *dev_id) ;
+static void spw_time_ih(void *dev_id) ;
+
 static void spw_start (spw_t *u) ;
 static inline void start_dma (double_buffer *pdbuf) ;
 static void start_rx_dma_if_needed (double_buffer *pdbuf) ;
@@ -387,6 +372,14 @@ static void spw_struct_init (spw_t *u, int port, int speed)
 		RTEMS_NO_PRIORITY_CEILING, 
 		0, 
 		&(u->txws));
+    
+    rtems_semaphore_create(
+		rtems_build_name('t', 'i', 'm', '0' + u->port), 
+		0, 
+		RTEMS_FIFO | RTEMS_SIMPLE_BINARY_SEMAPHORE | RTEMS_NO_INHERIT_PRIORITY | \
+		RTEMS_NO_PRIORITY_CEILING, 
+		0, 
+		&(u->time));
 }
 
 rtems_device_driver mcspw_open(
@@ -435,13 +428,22 @@ rtems_device_driver mcspw_open(
 		return ret;
 	}
     
+    ret = rtems_interrupt_handler_install (spw_time_irq (u->port), u->name, RTEMS_INTERRUPT_SHARED, spw_time_ih, u);
+      	if (ret != RTEMS_SUCCESSFUL) {
+		rtems_interrupt_handler_remove (spw_rx_desc_irq (u->port), spw_dma_rx_desc_ih, u);
+		rtems_interrupt_handler_remove (spw_rx_data_irq (u->port), spw_dma_rx_data_ih, u);
+		rtems_interrupt_handler_remove (spw_tx_data_irq (u->port), spw_dma_tx_data_ih, u);
+        rtems_interrupt_handler_remove (spw_rx_desc_irq (u->port), spw_connected_ih, u);
+		return ret;
+	}
+    
     bsp_disable_irq(spw_rx_desc_irq(u->port)) ;
     bsp_disable_irq(spw_tx_data_irq(u->port)) ;
     
     // Disable its or we will get unhandled exception.
     bsp_disable_irq(spw_tx_desc_irq(u->port)) ;
     bsp_disable_irq(spw_err_irq(u->port)) ;
-    bsp_disable_irq(spw_time_irq(u->port)) ;
+    //bsp_disable_irq(spw_time_irq(u->port)) ;
 	
 	DTRACEK ("MASKR2 = %08X, QSTR2 = %08X\n", MC_MASKR2, MC_QSTR2);
 	spw_start (u);
@@ -479,7 +481,7 @@ rtems_device_driver mcspw_read(
     size_t size = rw_args->count ;
     char *buf = rw_args->buffer ;
     
-    DTRACEK ("=== channel = %d\n", u->port);
+    DTRACEK ("=== channel = %d, pdesc=0x%x\n", u->port, pdesc);
 	
 	if (! spw_connected (u)) {
 		DTRACEK ("spw_read: channel %d not connected, wait for connection\n", u->port);
@@ -490,6 +492,7 @@ rtems_device_driver mcspw_read(
 		}
 		
 		// if (wait_event_interruptible (u->stwq, u->connected)) {
+		// FIXME: Enbale connected_ih IRQ may be?
 		if (rtems_semaphore_obtain(u->stws, RTEMS_WAIT, RTEMS_NO_TIMEOUT)) {
 			return RTEMS_UNSATISFIED ;
 		}
@@ -513,7 +516,7 @@ rtems_device_driver mcspw_read(
 			if (u->nonblock) return 0;
 
 			// Если блокирующий режим, то дожидаемся получения
-			// пакета без ошибок		
+			// пакета без ошибок
 			while (!pdesc->valid) {
 				DTRACEK ("=== spw_read, channel = %d, waiting for a packet\n", u->port);
 				DTRACEK ("RX DESC DMA CSR = %08X, RX DATA DMA CSR = %08X\n", 
@@ -530,16 +533,18 @@ rtems_device_driver mcspw_read(
 				DTRACEK ("=== spw_read, channel = %d, waiting done\n", u->port);
 			}
 		}
-		
+
 		pdesc->valid = 0;
 		
+        DTRACEK("pdesc->type = %i\n", pdesc->type) ;
 		if (pdesc->type == EOP) {
 			break;
-		} else {
+		} else {      // EEP
 			// Получен дескриптор с ошибкой, ждём следующего дескриптора
 			u->rx_eep++;
 			move_reader_p (&u->rx_desc_buf, sizeof (spw_descriptor_t));
 			pdesc = (spw_descriptor_t *) u->rx_desc_buf.half[u->rx_desc_buf.reader_idx].reader_p;
+            DTRACEK("Got new pdesc=0x%x\n", pdesc) ;
 			
 			bsp_disable_irq (spw_rx_data_irq (u->port));
 			move_reader_p (&u->rx_data_buf, pdesc->size);
@@ -714,13 +719,14 @@ rtems_device_driver mcspw_control(
     
     unsigned int chan_num = minor ;
 	spw_t *u = &spw_channel [chan_num];
-	unsigned freq_mult_mhz;
+	//unsigned freq_mult_mhz;
 
 	switch (cmd) {
 	// Получение значения частоты приема
 	case SPW_GET_RX_SPEED:
-		freq_mult_mhz = MC_FREQUENCY_MULTIPLIER * MC_QUARTZ_CLOCK_FREQ;
-		ioarg->ioctl_return = ((MC_SWIC_RX_SPEED (u->port) * freq_mult_mhz / 1000000) >> 7);
+		//freq_mult_mhz = MC_FREQUENCY_MULTIPLIER * MC_QUARTZ_CLOCK_FREQ;
+		//ioarg->ioctl_return = ((MC_SWIC_RX_SPEED (u->port) * freq_mult_mhz / 1000000) >> 7);
+        ioarg->ioctl_return = (MC_SWIC_RX_SPEED (u->port) * CPU_CLOCK_RATE_MHZ * 8 / 1024);
         break ;
 
 	// Получение значения частоты передачи
@@ -730,8 +736,9 @@ rtems_device_driver mcspw_control(
 
 	// Установка значения частоты передачи
 	case SPW_SET_TX_SPEED:
-		if (arg < 5 || arg > 400) return RTEMS_UNSATISFIED;
-		spw_set_tx_speed (u, arg);
+        DTRACEK("SPW_SET_SPEED request, data[0]=%i\n", data[0]) ;
+		if (data[0] < 5 || data[0] > 400) return RTEMS_UNSATISFIED;
+		spw_set_tx_speed (u, data[0]);
 		ioarg->ioctl_return = 0;
         break ;
 		
@@ -784,6 +791,15 @@ rtems_device_driver mcspw_control(
     case SPW_RX_IS_EMPTY:
         ioarg->ioctl_return = u->rx_data_buf.half[u->rx_data_buf.reader_idx].empty ;
         break ;
+    
+    case SPW_WAIT_TIME_CODE:
+        if (rtems_semaphore_obtain(u->time, RTEMS_WAIT, RTEMS_NO_TIMEOUT)) {
+			return RTEMS_UNSATISFIED ;
+		}
+        
+    case SPW_GET_TIME_CODE:
+        ioarg->ioctl_return = MC_SWIC_RX_CODE(u->port) & MC_SWIC_TIME_CODE ;
+        break ;
         
 	default:
 		return RTEMS_NOT_IMPLEMENTED ;
@@ -814,10 +830,19 @@ static void spw_dma_rx_data_ih (void *dev_id)
 static void spw_dma_rx_desc_ih (void *dev_id)
 {
 	spw_t *u = dev_id;
+#ifdef DEBUG
+	spw_descriptor_t *pdesc = (spw_descriptor_t *) u->rx_desc_buf.half[u->rx_desc_buf.reader_idx].reader_p;
+#endif
 	
+#ifdef BSP_ENABLE_CPU_CACHE
+    cpu_cache_invalidate_data() ;
+#endif
+    
+    DTRACEK("Descriptor has been received, pdesc=0x%x, type=0x%x\n", pdesc,  pdesc->type) ;
+    
 	// Снимаем признак прерывания
 	MC_SWIC_RX_DESC_CSR (u->port);
-		
+    
 	rtems_semaphore_release (u->rxdescws);
 }
 
@@ -828,6 +853,8 @@ static void spw_dma_tx_data_ih (void *dev_id)
 {
 	spw_t *u = dev_id;
 	
+    DTRACEK("Data transmitted, channel=%i\n", u->port) ;
+    
 	// Снимаем признак прерывания
 	MC_SWIC_TX_DATA_CSR (u->port);
 		
@@ -848,26 +875,39 @@ static void spw_connected_ih (void *dev_id)
 		DTRACEK ("Error detected, waiting reconnection\n");
 		return ;
 	}
-		
-	MC_SWIC_STATUS (u->port) |= MC_SWIC_CONNECTED;
-
-
+    
+    MC_SWIC_STATUS (u->port) |= MC_SWIC_CONNECTED;      // clear IRQ
+    
+	
     /* Fix: DMA appear to be run when program is restarted, but actually it is not.
-     * So, start dma in any case.
-     */
-	//if ( !(SWIC_DMA_RUN (u->rx_desc_buf.dma_chan))) start_dma (&u->rx_desc_buf);
-	//if ( !(SWIC_DMA_RUN (u->rx_data_buf.dma_chan))) start_dma (&u->rx_data_buf);
+    * So, start dma in any case.
+    */
+    //if ( !(SWIC_DMA_RUN (u->rx_desc_buf.dma_chan))) start_dma (&u->rx_desc_buf);
+    //if ( !(SWIC_DMA_RUN (u->rx_data_buf.dma_chan))) start_dma (&u->rx_data_buf);
     start_dma (&u->rx_desc_buf);
     start_dma (&u->rx_data_buf);
 	
-	spw_set_tx_speed (u, u->speed);
+    spw_set_tx_speed (u, u->speed);
 	
-	rtems_semaphore_release (u->stws);
+    rtems_semaphore_release (u->stws);
+    
+    // Закрываем прерывание, иначе оно будет возникать по приему каждого пакета
+    MC_SWIC_MODE_CR(u->port) &= ~MC_SWIC_LINK_MASK;
+	
+    u->connected = 1 ;
+}
 
-	// Закрываем прерывание, иначе оно будет возникать по приему каждого пакета
-	MC_SWIC_MODE_CR(u->port) &= ~MC_SWIC_LINK_MASK;
-	
-	u->connected = 1;
+// Handle time codes
+static void spw_time_ih(void *dev_id) {
+    spw_t *u = dev_id ;
+    
+    DTRACEK("SWIC STATUS=0x%x\n", MC_SWIC_STATUS (u->port) ) ;
+    DTRACEK ("Time code event: RX_CODE%i=0x%x\n", u->port, MC_SWIC_RX_CODE(u->port));
+    
+    MC_SWIC_STATUS (u->port) |= MC_SWIC_GOT_TIME ;      // clear IRQ
+    MC_SWIC_STATUS (u->port) |= MC_SWIC_IRQ_TIM ;
+    
+    rtems_semaphore_release( u->time );
 }
 
 static void spw_start (spw_t *u)
@@ -895,11 +935,11 @@ static void spw_start (spw_t *u)
 	DTRACEK ("TX_SPEED(%d) = %08X\n", u->port, MC_SWIC_TX_SPEED(u->port));
 
 	MC_SWIC_MODE_CR(u->port) = MC_SWIC_LinkStart | MC_SWIC_AutoStart | 
-		MC_SWIC_WORK_TYPE | MC_SWIC_LINK_MASK;
+		MC_SWIC_WORK_TYPE | MC_SWIC_LINK_MASK | MC_SWIC_TCODE_MASK | MC_SWIC_TIM_MASK ;
 		
 	//MC_SWIC_MODE_CR(u->port) = MC_SWIC_LinkStart | MC_SWIC_AutoStart | 
 	//	MC_SWIC_WORK_TYPE | MC_SWIC_LINK_MASK | MC_SWIC_AUTO_TX_SPEED;
-
+        
 	// Сброс всех признаков прерываний
 	MC_SWIC_STATUS(u->port) = SWIC_RESET_ALL_IRQS;
 

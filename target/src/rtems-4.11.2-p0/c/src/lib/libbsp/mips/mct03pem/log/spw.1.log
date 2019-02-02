@@ -1,0 +1,102 @@
+CMcSpaceWire_test.cpp: writerProc(): DISCONNECTED                                                                       
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0                                                                   
+mcspw.c: mcspw_write(): === channel = 0, size = 1                                                                       
+mcspw.c: mcspw_write(): spw_write: channel 0 not connected, wait for connection                                         
+mcspw.c: spw_start(): TX_SPEED(0) = 00A00302                                                                            
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: readerProc(): DISCONNECTED                                                                       
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: readerProc(): DISCONNECTED                                                                       
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: readerProc(): DISCONNECTED                                                                       
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: readerProc(): DISCONNECTED                                                                       
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: readerProc(): DISCONNECTED                                                                       
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                          
+CMcSpaceWire_test.cpp: readerProc(): DISCONNECTED                                                                       
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x1                                          
+CMcSpaceWire_test.cpp: readerProc(): CONNECTED                                                                          
+mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1                                                                    
+mcspw.c: mcspw_read(): === channel = 1                                                                                  
+mcspw.c: mcspw_read(): === spw_read, channel = 1, no data                                                               
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD800) = 00003001, second empty: 1, dma idx: 00
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD840) = 03E52001, second empty: 1, dma idx: 00
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 03E52001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+vectorisrs.c: bsp_get_qstr_irq(): Reading qstr2=010D0                                                                   
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x10D0, starting irq_bit=0                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit4, IRQ108 occured, masked                                                    
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6, IRQ110 occured, masked                                                    
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7, IRQ111 occured, masked                                                    
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x10D0, starting irq_bit=13                                              
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F72121 bit12                                                        
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 64                                                 
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 7992                                               
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+mcspw.c: mcspw_read(): === spw_read, channel = 1, no data                                                               
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD800) = 00003001, second empty: 1, dma idx: 00
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD840) = 03E42001, second empty: 1, dma idx: 00
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 03E42001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+vectorisrs.c: bsp_get_qstr_irq(): Reading qstr2=010D0                                                                   
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x10D0, starting irq_bit=0                                               
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit4, IRQ108 occured, masked                                                    
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit6, IRQ110 occured, masked                                                    
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit7, IRQ111 occured, masked                                                    
+vectorisrs.c: bsp_get_qstr_irq(): QSTR2 bit12, IRQ116 occured                                                           
+vectorisrs.c: bsp_get_qstr_irq(): Called QSTR2=0x10D0, starting irq_bit=13                                              
+vectorisrs.c: bsp_disable_irq(): irq116, MASKR2=0xF7F72121 bit12                                                        
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting done                                                          
+mcspw.c: mcspw_read(): === spw_read, processing packet                                                                  
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: mcspw_read(): pdata = 800940D8                                                                                 
+mcspw.c: avail_size(): avail_size: sz = 16, DMA CSR = 03E32001, IR = 000940E8, addr = 000940D8                          
+mcspw.c: mcspw_read(): avail_size = 16, rest = 5                                                                        
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 7984                                               
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+mcspw.c: move_reader_p(): move_reader_p, distance = 8, size_to_end = 56                                                 
+mcspw.c: mcspw_read(): === spw_read exit, channel = 1, completed = 5                                                    
+CMcSpaceWire.cpp: recv(): read() returned 5                                                                             
+CMcSpaceWire_test.cpp: readerProc(): <- Received a packet size=5, firts 16 bytes:                                       
+0xC8 0x80 0x82 0x20 0x20 0x0 0xAA 0x0 0x21 0xD0 0xE0 0x9 0x80 0xA8 0x40 0xA                                             
+CMcSpaceWire_test.cpp: readerProc(): wrongPackets=0                                                                     
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x1                                                                 
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x1                                          
+CMcSpaceWire_test.cpp: readerProc(): CONNECTED                                                                          
+mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x1                                                                    
+mcspw.c: mcspw_read(): === channel = 1                                                                                  
+mcspw.c: mcspw_read(): === spw_read, channel = 1, no data                                                               
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD800) = 00003001, second empty: 1, dma idx: 00
+vectorisrs.c: bsp_disable_irq(): irq117, MASKR2=0xF7F70121 bit13                                                        
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xD840) = 03E32001, second empty: 1, dma idx: 00
+vectorisrs.c: bsp_enable_irq(): irq117, MASKR2=0xF7F72121 bit13                                                         
+mcspw.c: mcspw_read(): === spw_read, channel = 1, waiting for a packet                                                  
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 03E32001                                           
+vectorisrs.c: bsp_enable_irq(): irq116, MASKR2=0xF7F73121 bit12                                                         
+ 

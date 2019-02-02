@@ -1,11 +1,20 @@
-# Examples:
+Examples:
+
+cd <bsp_src_dir>
+bootstrap -c
+bootstarp
+bootstrap -p
+
+cd <bsp_build_dir>
 
 $RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=malta --enable-posix
 
-# Compile only samples
-$RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=mct03pem --enable-posix --enable-tests=samples
+or
 
-# Compile all test
+$RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=mct03pem --enable-posix --enable-tests=samples --enable-cxx
+
+or
+
 $RTEMS_HOME/target/src/rtems-4.11.2-p0/configure --prefix=$RTEMS_HOME/host/4.11 --target=mips-rtems4.11 --enable-rtemsbsp=mct03pem --enable-posix --enable-tests=yes
 
 make
