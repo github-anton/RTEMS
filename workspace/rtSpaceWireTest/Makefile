@@ -8,8 +8,12 @@ C_FILES=$(C_PIECES:%=%.c)
 C_O_FILES=$(C_PIECES:%=${ARCH}/%.o)
 
 # C++ source names, if any, go here -- minus the .cpp
+<<<<<<< HEAD
 CC_PIECES=Init CSpaceWire CMcSpaceWire CMcSpaceWire_test ThreadedSpaceWireRw
 #CC_PIECES=Init CSpaceWire CMcSpaceWire SpaceWire_speedTest
+=======
+CC_PIECES=Init CMcSpaceWire CMcSpaceWire_test
+>>>>>>> 212e3b0a2a9fecda746bc7803e945f3a46a1a98a
 CC_FILES=$(CC_PIECES:%=%.cpp)
 CC_O_FILES=$(CC_PIECES:%=${ARCH}/%.o)
 

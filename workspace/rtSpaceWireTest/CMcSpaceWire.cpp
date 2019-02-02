@@ -5,7 +5,11 @@
  *      Author: anton
  */
 
+<<<<<<< HEAD
 #if 0
+=======
+#if 1
+>>>>>>> 212e3b0a2a9fecda746bc7803e945f3a46a1a98a
 #	define DEBUG
 #endif
 
@@ -24,12 +28,21 @@
 #include <unistd.h>
 #include "aux.h"
 
+<<<<<<< HEAD
 CMcSpaceWire::CMcSpaceWire(const char *strDev, size_t maxPacketLen, size_t addrLen) {
 	ok = false ;
 	this->addrLen = addrLen ;
     this->maxPacketLen = maxPacketLen ;
 	pOutBuf = new u_char [this->maxPacketLen] ;
 	pInpBuf = new u_char [this->maxPacketLen] ;
+=======
+CMcSpaceWire::CMcSpaceWire(const char *strDev, size_t addrLen) {
+	ok = false ;
+	this->addrLen = addrLen ;
+	maxCargoLen = SPACEWIRE_MAX_PACKET_LEN - addrLen ;
+	pOutBuf = new u_char [SPACEWIRE_MAX_PACKET_LEN] ;
+	pInpBuf = new u_char [SPACEWIRE_MAX_PACKET_LEN] ;
+>>>>>>> 212e3b0a2a9fecda746bc7803e945f3a46a1a98a
     fd = open(strDev, O_RDWR) ;
 	if (fd == -1 ) {
 		DTRACE("FATAL: Can't open %s: %s\n", strDev, strerror(errno)) ;
@@ -59,10 +72,13 @@ bool CMcSpaceWire::isConnected() {
 
 int CMcSpaceWire::sendTo(u_char addr[], void *pData, size_t len) {
 	size_t packetLen = 0 ;
+<<<<<<< HEAD
     int nBytes ;
     
     DTRACE("Called...\n") ;
     
+=======
+>>>>>>> 212e3b0a2a9fecda746bc7803e945f3a46a1a98a
 	if (addrLen != 0) {
 		memcpy(&pOutBuf[0], addr, addrLen) ;
 		packetLen += addrLen ;
@@ -71,8 +87,12 @@ int CMcSpaceWire::sendTo(u_char addr[], void *pData, size_t len) {
 		memcpy(&pOutBuf[addrLen], pData, len) ;
 		packetLen += len ;
 	}
+<<<<<<< HEAD
 	
 	nBytes = write(fd, pOutBuf, packetLen) ;
+=======
+	int nBytes = write(fd, pOutBuf, packetLen) ;
+>>>>>>> 212e3b0a2a9fecda746bc7803e945f3a46a1a98a
 	DTRACE("write() returned %i\n", nBytes) ;
 	if( nBytes == -1 ){
 		DTRACE ("ERR: Can't write data buffer: %s\n", strerror(errno)) ;
@@ -89,6 +109,7 @@ int CMcSpaceWire::recv(void *pData, size_t len) {
 		return -1 ;
 	}
 
+<<<<<<< HEAD
 	if( nBytes > 0 ) {
         len = MIN(nBytes - addrLen, len) ;
 		memcpy(pData, &pInpBuf[addrLen], nBytes - addrLen) ;
@@ -119,4 +140,16 @@ int CMcSpaceWire::setTxSpeed(u_int MbitPs) {
 
 int CMcSpaceWire::getRxSpeed() {
     return ioctl(fd, SPW_GET_RX_SPEED) ;
+=======
+	/* Since heading bytes was deleted by routers we do not need to read
+	 * path addr */
+	if( nBytes > 0 ) {
+		memcpy(pData, pInpBuf, nBytes) ;
+	}
+	return nBytes ;
+}
+
+size_t CMcSpaceWire::getMaxCargoLen() {
+	return maxCargoLen ;
+>>>>>>> 212e3b0a2a9fecda746bc7803e945f3a46a1a98a
 }
