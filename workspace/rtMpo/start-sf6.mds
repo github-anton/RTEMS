@@ -1,0 +1,25 @@
+reset
+
+set 0xb82f4004 0xffffffff    # CLK_EN. enable all clocks
+# The board works at 80/120 Mhz unstably.
+#set 0xb82f4000 0x90a0        # CR_PLL0. MPORT 80MHz CPU 120MHz, XTI=10MHz
+#set 0xb82f4000 0x8e96        # CR_PLL0. MPORT 70MHz CPU 110MHz, XTI=10MHz
+#set 0xb82f4000 0x8c94        # CR_PLL0. MPORT 60MHz CPU 100MHz, XTI=10MHz
+set 0xb82f4000 0x8294        # CR_PLL0. MPORT 10MHz CPU 100MHz, XTI=10MHz
+#set 0xb82f4000 0x8b92        # CR_PLL0. MPORT 50MHz CPU 90MHz, XTI=10MHz
+set 0xb82f407c 0x0000        # CR_PLL1. acc is off
+
+set 0x182f1000 0xb000f8		# for SRAM CSCON0 wait for 1 tact
+#set 0x182f1000 0xb700f8		# for SRAM CSCON0 wait for 8 tacts
+#set 0x182f1000 0xbf00f8		# for SRAM CSCON0 wait for 16 tacts
+set 0x182f1014 0x02700020  	# for SDRAM	## Comment to cause Unhandled exception
+set 0x182f1018 0x00740111  	# for SDRAM ## Comment to cause Unhandled exception
+
+set 0x182f101c 0x40        	#init SDRAM
+set 0x182f101c 0x1         	#init SDRAM
+
+show 0x182f100c				# CSCON3
+
+loadelf	o-optimize/rtMpo.exe
+run
+

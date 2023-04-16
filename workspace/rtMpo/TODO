@@ -1,0 +1,2 @@
+1. Change sheduler task initialization algorithm.
+2. Find out why FPGA_DONE is not being set after booting FPGA to be done.

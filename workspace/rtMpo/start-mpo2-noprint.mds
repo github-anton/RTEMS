@@ -1,0 +1,15 @@
+reset
+
+set 0xb82f4000 0x8c94     	# CR_PLL0. MPORT 60MHz CPU 100MHz, XTI=10MHz
+set 0x182f407c 0x00a30000
+
+set 0x182f1004 0x1200ff 	# SRAM on CSCON1: 2 - wait for 3 tacts
+set 0x182f1024 0xff0010		# Disable Hamming
+set 0x182f4004 0xffffffff	# Enable all Clks
+
+set 0x182f101c 0x40			# init RAM
+set 0x182f101c 0x1			# init RAM
+
+loadelf o-optimize-noprint/rtMpo.exe
+run
+exit

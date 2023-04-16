@@ -1,0 +1,1031 @@
+SysSwIO: Send -> packet to addr=33, packet-len=16                                                            
+Clock_mask: 8000                                                                                             
+MPO started...                                                                                               
+Unpacking tar filesystem:               ...SUCCESSFUL.                                                       
+Setup RAM Disk:                         ...SUCCESSFUL.                                                       
+Shed: Select profile -> Initialize                                                                           
+SysMpoMachine: STARTED                                                                                       
+SysInit: Initialize CRC16 X25 algorithm ...DONE.                                                             
+Shed: Select profile -> Wait                                                                                 
+SysMpoMachine: INIT -> WAIT                                                                                  
+CMcSpaceWire.cpp: recv(): len=33, hex:                                                                       
+20 75 f6 01 00 00 00 00 00 04 00 01 00 11 00 00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 00 00           
+SysSwIO: MMI SETMODE command received, len=32                                                                
+SysMpoMachine: received <- ctlSym=TRDEC                                                                      
+Shed: Select profile -> Transmit_Decoded                                                                     
+SysMpoMachine: WAIT -> TRDEC                                                                                 
+SysSwIO: Read packet from task, len=16                                                                       
+SysSwIO: Send -> packet to addr=33, packet-len=16                                                            
+AppTransmit: received <- MMI cmd + ARG9, len=32                                                              
+FPGA: parsing ARG[:9]={0x1 0x11 0x0 0x0 0x3 0x0 0x0 0x0 0x0 }                                                
+AppTransmit: APPLY FPGA receiver coeffs:                                                                     
+reset_dsp=1                                                                                                  
+adc_atten_1=0                                                                                                
+adc_atten_2=0                                                                                                
+freq_ddc_nco_1=4536547                                                                                       
+freq_ddc_nco_2[:4]= 14902158 14865749 1911466 1875057                                                        
+corr_lvl_coef=26214                                                                                          
+peak_detect_sig_del=14592                                                                                    
+peak_detect_corr_del=1695                                                                                    
+ddc_filter_coefs[:436]= 1282 260598 261157 261437 261571 261627 261643                                       
+corr_coefs_real[:256]= 189179 211473 235045 258233 16909 33357 43840 47429                                   
+corr_coefs_imag[:256]= 153259 141262 133904 131130 132167 135388 138621 139954                               
+recv_filter_coefs[:129]= 143 53 262089 261985 261909 261883 261923                                           
+AppTransmit: RESET lport.                                                                                    
+AppTransmit: APPLY FPGA lport params:                                                                        
+lport0: en=1, src=0, mod_trig=0, chan=273                                                                    
+lport1: en=0, src=0, mod_trig=0, chan=272                                                                    
+================================================                                                             
+1: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 1: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (179,23), freq_hz=-368188, deltaF,
+ ampl = 7, crc_err=1                                                                                         
+FPGAParser: 1: HDR:                                                                                          
+aa 55 b3 50 c4 61 fa ff 07 00 00 00                                                                          
+FPGAParser: 1: INF Payload+CRC16: actual-len=23:                                                             
+HEX:                                                                                                         
+2e a7 fe 75 df 73 73 72 73 63 73 73 72 73 76 73 73 73 73 76 73 3a 03                                         
+FPGAParser: 1: crc16 = 0x33a                                                                                 
+================================================                                                             
+2: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 2: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-5515, deltaFrq,
+ ampl = 129, crc_err=0                                                                                       
+FPGAParser: 2: HDR:                                                                                          
+aa 55 b8 c0 75 ea ff ff 81 00 00 00                                                                          
+FPGAParser: 2: INF Payload+CRC16: actual-len=23:                                                             
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 2: crc16 = 0x1123                                                                                
+================================================                                                             
+3: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 3: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (231,29), freq_hz=-368188, deltaF,
+ ampl = 7, crc_err=1                                                                                         
+FPGAParser: 3: HDR:                                                                                          
+aa 55 e7 50 c4 61 fa ff 07 00 00 00                                                                          
+FPGAParser: 3: INF Payload+CRC16: actual-len=29:                                                             
+HEX:                                                                                                         
+ef ff ff 7f ee a1 5e e1 2c 82 00 00 7a 7a 6a 6a 6a ea ea fa ff ff ff ff ff ff ff ff 7f                       
+FPGAParser: 3: crc16 = 0x7fff                                                                                
+================================================                                                             
+4: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 4: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-300, deltaFrqD,
+ ampl = 101, crc_err=0                                                                                       
+FPGAParser: 4: HDR:                                                                                          
+aa 55 b8 c0 d4 fe ff ff 65 00 00 00                                                                          
+FPGAParser: 4: INF Payload+CRC16: actual-len=23:                                                             
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 4: crc16 = 0x1123                                                                                
+4: packet DUPLICATE (CRC match).                                                                             
+================================================                                                             
+5: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 5: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (822,103), freq_hz=-300, deltaFrq,
+ ampl = 101, crc_err=1                                                                                       
+FPGAParser: 5: HDR:                                                                                          
+aa 55 36 d3 d4 fe ff ff 65 00 00 00                                                                          
+FPGAParser: 5: INF Payload+CRC16: actual-len=103:                                                            
+HEX:                                                                                                         
+03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 80 3f 80 aa 2a                                                                                            
+FPGAParser: 5: crc16 = 0x2aaa                                                                                
+================================================                                                             
+6: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 6: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5352, deltaFrqD,
+ ampl = 148, crc_err=0                                                                                       
+FPGAParser: 6: HDR:                                                                                          
+aa 55 b8 c0 e8 14 00 00 94 00 00 00                                                                          
+FPGAParser: 6: INF Payload+CRC16: actual-len=23:                                                             
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 6: crc16 = 0x1123                                                                                
+6: packet DUPLICATE (CRC match).                                                                             
+================================================                                                             
+7: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+len(bytes) = 142: AIS data is too big!                                                                       
+================================================                                                             
+7: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 7: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5352, deltaFrqD,
+ ampl = 159, crc_err=0                                                                                       
+FPGAParser: 7: HDR:                                                                                          
+aa 55 b8 c0 e8 14 00 00 9f 00 00 00                                                                          
+FPGAParser: 7: INF Payload+CRC16: actual-len=23:                                                             
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 7: crc16 = 0x1123                                                                                
+7: packet DUPLICATE (CRC match).                                                                             
+================================================                                                             
+8: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 8: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (567,71), freq_hz=5352, deltaFrqD,
+ ampl = 159, crc_err=1                                                                                       
+FPGAParser: 8: HDR:                                                                                          
+aa 55 37 d2 e8 14 00 00 9f 00 00 00                                                                          
+FPGAParser: 8: INF Payload+CRC16: actual-len=71:                                                             
+HEX:                                                                                                         
+02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 fe 55 55 55                                                                                            
+FPGAParser: 8: crc16 = 0x5555                                                                                
+================================================                                                             
+9: DDC_INF_MSG_TOKEN=0x55aa                                                                                  
+FPGAParser: 9: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaFr,
+ ampl = 91, crc_err=0                                                                                        
+FPGAParser: 9: HDR:                                                                                          
+aa 55 b8 c0 b8 d6 ff ff 5b 00 00 00                                                                          
+FPGAParser: 9: INF Payload+CRC16: actual-len=23:                                                             
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 9: crc16 = 0x1123                                                                                
+9: packet DUPLICATE (CRC match).                                                                             
+================================================                                                             
+10: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 199: AIS data is too big!                                                                       
+================================================                                                             
+10: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 10: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-5515, deltaFr,
+ ampl = 110, crc_err=0                                                                                       
+FPGAParser: 10: HDR:                                                                                         
+aa 55 b8 c0 75 ea ff ff 6e 00 00 00                                                                          
+FPGAParser: 10: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 10: crc16 = 0x1123                                                                               
+10: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+11: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 176: AIS data is too big!                                                                       
+================================================                                                             
+11: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 167: AIS data is too big!                                                                       
+================================================                                                             
+11: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 11: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=10567, deltaFr,
+ ampl = 152, crc_err=0                                                                                       
+FPGAParser: 11: HDR:                                                                                         
+aa 55 b8 c0 47 29 00 00 98 00 00 00                                                                          
+FPGAParser: 11: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 11: crc16 = 0x1123                                                                               
+11: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+12: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 164: AIS data is too big!                                                                       
+================================================                                                             
+12: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 164: AIS data is too big!                                                                       
+================================================                                                             
+12: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 12: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10725, deltaF,
+ ampl = 143, crc_err=0                                                                                       
+FPGAParser: 12: HDR:                                                                                         
+aa 55 b8 c0 1b d6 ff ff 8f 00 00 00                                                                          
+FPGAParser: 12: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 12: crc16 = 0x1123                                                                               
+12: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+13: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 13: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (1078,135), freq_hz=-10725, delt,
+ ampl = 143, crc_err=1                                                                                       
+FPGAParser: 13: HDR:                                                                                         
+aa 55 36 d4 1b d6 ff ff 8f 00 00 00                                                                          
+FPGAParser: 13: INF Payload+CRC16: actual-len=135:                                                           
+HEX:                                                                                                         
+07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 be ff aa 2a                                                                                            
+FPGAParser: 13: crc16 = 0x2aaa                                                                               
+================================================                                                             
+14: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 14: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 78, crc_err=0                                                                                        
+FPGAParser: 14: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 4e 00 00 00                                                                          
+FPGAParser: 14: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 14: crc16 = 0x1123                                                                               
+14: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+15: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 15: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (567,71), freq_hz=-10568, deltaF,
+ ampl = 78, crc_err=1                                                                                        
+FPGAParser: 15: HDR:                                                                                         
+aa 55 37 d2 b8 d6 ff ff 4e 00 00 00                                                                          
+FPGAParser: 15: INF Payload+CRC16: actual-len=71:                                                            
+HEX:                                                                                                         
+06 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 ff 20 55 55                                                                                            
+FPGAParser: 15: crc16 = 0x5555                                                                               
+================================================                                                             
+16: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 16: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 151, crc_err=0                                                                                       
+FPGAParser: 16: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 97 00 00 00                                                                          
+FPGAParser: 16: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 16: crc16 = 0x1123                                                                               
+16: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+17: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 195: AIS data is too big!                                                                       
+================================================                                                             
+17: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 17: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=137, deltaFrqD,
+ ampl = 138, crc_err=0                                                                                       
+FPGAParser: 17: HDR:                                                                                         
+aa 55 b8 c0 89 00 00 00 8a 00 00 00                                                                          
+FPGAParser: 17: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 17: crc16 = 0x1123                                                                               
+17: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+18: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 18: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5352, deltaFrq,
+ ampl = 117, crc_err=0                                                                                       
+FPGAParser: 18: HDR:                                                                                         
+aa 55 b8 c0 e8 14 00 00 75 00 00 00                                                                          
+FPGAParser: 18: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 18: crc16 = 0x1123                                                                               
+18: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+19: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 19: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-300, deltaFrq,
+ ampl = 94, crc_err=0                                                                                        
+FPGAParser: 19: HDR:                                                                                         
+aa 55 b8 c0 d4 fe ff ff 5e 00 00 00                                                                          
+FPGAParser: 19: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 19: crc16 = 0x1123                                                                               
+19: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+20: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 20: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 79, crc_err=0                                                                                        
+FPGAParser: 20: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 4f 00 00 00                                                                          
+FPGAParser: 20: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 20: crc16 = 0x1123                                                                               
+20: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+21: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 21: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (812,102), freq_hz=-370884, delt,
+ ampl = 11, crc_err=1                                                                                        
+FPGAParser: 21: HDR:                                                                                         
+aa 55 2c 53 3c 57 fa ff 0b 00 00 00                                                                          
+FPGAParser: 21: INF Payload+CRC16: actual-len=102:                                                           
+HEX:                                                                                                         
+f1 ec ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff           
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff              
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff              
+ff ff 7f 76 0e                                                                                               
+FPGAParser: 21: crc16 = 0xe76                                                                                
+================================================                                                             
+22: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 22: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (823,103), freq_hz=-10568, delta,
+ ampl = 79, crc_err=1                                                                                        
+FPGAParser: 22: HDR:                                                                                         
+aa 55 37 d3 b8 d6 ff ff 4f 00 00 00                                                                          
+FPGAParser: 22: INF Payload+CRC16: actual-len=103:                                                           
+HEX:                                                                                                         
+06 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 ff 00 55 55                                                                                            
+FPGAParser: 22: crc16 = 0x5555                                                                               
+================================================                                                             
+23: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 23: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 160, crc_err=0                                                                                       
+FPGAParser: 23: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff a0 00 00 00                                                                          
+FPGAParser: 23: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 23: crc16 = 0x1123                                                                               
+23: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+24: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 209: AIS data is too big!                                                                       
+================================================                                                             
+24: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 199: AIS data is too big!                                                                       
+================================================                                                             
+24: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 24: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (117,15), freq_hz=-370884, delta,
+ ampl = 11, crc_err=1                                                                                        
+FPGAParser: 24: HDR:                                                                                         
+aa 55 75 50 3c 57 fa ff 0b 00 00 00                                                                          
+FPGAParser: 24: INF Payload+CRC16: actual-len=15:                                                            
+HEX:                                                                                                         
+67 f3 ff ff ff ff 2c 67 3d 25 ff 96 7f cf 0b                                                                 
+FPGAParser: 24: crc16 = 0xbcf                                                                                
+================================================                                                             
+25: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 25: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-4915, deltaFr,
+ ampl = 150, crc_err=0                                                                                       
+FPGAParser: 25: HDR:                                                                                         
+aa 55 b8 c0 cd ec ff ff 96 00 00 00                                                                          
+FPGAParser: 25: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 25: crc16 = 0x1123                                                                               
+25: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+26: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 26: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (536,67), freq_hz=-4915, deltaFr,
+ ampl = 150, crc_err=1                                                                                       
+FPGAParser: 26: HDR:                                                                                         
+aa 55 18 d2 cd ec ff ff 96 00 00 00                                                                          
+FPGAParser: 26: INF Payload+CRC16: actual-len=67:                                                            
+HEX:                                                                                                         
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00                                                                                                        
+FPGAParser: 26: crc16 = 0x0                                                                                  
+================================================                                                             
+27: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 27: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (555,70), freq_hz=-370884, delta,
+ ampl = 11, crc_err=1                                                                                        
+FPGAParser: 27: HDR:                                                                                         
+aa 55 2b 52 3c 57 fa ff 0b 00 00 00                                                                          
+FPGAParser: 27: INF Payload+CRC16: actual-len=70:                                                            
+HEX:                                                                                                         
+3c 9e 75 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff           
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff              
+ff ff ff bf 07                                                                                               
+FPGAParser: 27: crc16 = 0x7bf                                                                                
+================================================                                                             
+28: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 28: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 108, crc_err=0                                                                                       
+FPGAParser: 28: HDR:                                                                                         
+aa 55 b8 c0 2b 01 00 00 6c 00 00 00                                                                          
+FPGAParser: 28: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 28: crc16 = 0x1123                                                                               
+28: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+29: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 29: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5352, deltaFrq,
+ ampl = 159, crc_err=0                                                                                       
+FPGAParser: 29: HDR:                                                                                         
+aa 55 b8 c0 e8 14 00 00 9f 00 00 00                                                                          
+FPGAParser: 29: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 29: crc16 = 0x1123                                                                               
+29: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+30: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 30: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (314,40), freq_hz=-370884, delta,
+ ampl = 11, crc_err=1                                                                                        
+FPGAParser: 30: HDR:                                                                                         
+aa 55 3a 51 3c 57 fa ff 0b 00 00 00                                                                          
+FPGAParser: 30: INF Payload+CRC16: actual-len=40:                                                            
+HEX:                                                                                                         
+f6 76 fe 9f e7 ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff           
+ff ff ff ff ff 7f 03                                                                                         
+FPGAParser: 30: crc16 = 0x37f                                                                                
+================================================                                                             
+31: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 31: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (310,39), freq_hz=5352, deltaFrq,
+ ampl = 159, crc_err=1                                                                                       
+FPGAParser: 31: HDR:                                                                                         
+aa 55 36 d1 e8 14 00 00 9f 00 00 00                                                                          
+FPGAParser: 31: INF Payload+CRC16: actual-len=39:                                                            
+HEX:                                                                                                         
+02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 ff aa aa 2a                                                                                            
+FPGAParser: 31: crc16 = 0x2aaa                                                                               
+================================================                                                             
+32: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 32: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-300, deltaFrq,
+ ampl = 128, crc_err=0                                                                                       
+FPGAParser: 32: HDR:                                                                                         
+aa 55 b8 c0 d4 fe ff ff 80 00 00 00                                                                          
+FPGAParser: 32: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 32: crc16 = 0x1123                                                                               
+32: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+33: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 33: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-26369, deltaF,
+ ampl = 128, crc_err=1                                                                                       
+FPGAParser: 33: HDR:                                                                                         
+aa 55 b8 d0 ff 98 ff ff 80 00 00 00                                                                          
+FPGAParser: 33: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+00 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 33: crc16 = 0x1123                                                                               
+33: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+34: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 34: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (567,71), freq_hz=-26369, deltaF,
+ ampl = 128, crc_err=1                                                                                       
+FPGAParser: 34: HDR:                                                                                         
+aa 55 37 d2 ff 98 ff ff 80 00 00 00                                                                          
+FPGAParser: 34: INF Payload+CRC16: actual-len=71:                                                            
+HEX:                                                                                                         
+07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 fe 55 55 55                                                                                            
+FPGAParser: 34: crc16 = 0x5555                                                                               
+================================================                                                             
+35: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 35: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 135, crc_err=0                                                                                       
+FPGAParser: 35: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 87 00 00 00                                                                          
+FPGAParser: 35: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 35: crc16 = 0x1123                                                                               
+35: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+36: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 36: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-300, deltaFrq,
+ ampl = 76, crc_err=0                                                                                        
+FPGAParser: 36: HDR:                                                                                         
+aa 55 b8 c0 d4 fe ff ff 4c 00 00 00                                                                          
+FPGAParser: 36: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 36: crc16 = 0x1123                                                                               
+36: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+37: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 37: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (823,103), freq_hz=-300, deltaFr,
+ ampl = 76, crc_err=1                                                                                        
+FPGAParser: 37: HDR:                                                                                         
+aa 55 37 d3 d4 fe ff ff 4c 00 00 00                                                                          
+FPGAParser: 37: INF Payload+CRC16: actual-len=103:                                                           
+HEX:                                                                                                         
+07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 80 ff 55 55 55                                                                                            
+FPGAParser: 37: crc16 = 0x5555                                                                               
+================================================                                                             
+38: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 38: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (961,121), freq_hz=-451406, delt,
+ ampl = 10, crc_err=1                                                                                        
+FPGAParser: 38: HDR:                                                                                         
+aa 55 c1 53 b2 1c f9 ff 0a 00 00 00                                                                          
+FPGAParser: 38: INF Payload+CRC16: actual-len=121:                                                           
+HEX:                                                                                                         
+fe ff 2f fd ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff           
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff              
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff              
+ff ff ff ff ff ff ff ff ff ff ff ff ff ff dd ff df af f3 ff eb ee fc 01                                      
+FPGAParser: 38: crc16 = 0x1fc                                                                                
+================================================                                                             
+39: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 39: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 160, crc_err=0                                                                                       
+FPGAParser: 39: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff a0 00 00 00                                                                          
+FPGAParser: 39: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 39: crc16 = 0x1123                                                                               
+39: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+40: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 40: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5352, deltaFrq,
+ ampl = 114, crc_err=0                                                                                       
+FPGAParser: 40: HDR:                                                                                         
+aa 55 b8 c0 e8 14 00 00 72 00 00 00                                                                          
+FPGAParser: 40: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 40: crc16 = 0x1123                                                                               
+40: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+41: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 163: AIS data is too big!                                                                       
+================================================                                                             
+41: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 41: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 79, crc_err=0                                                                                        
+FPGAParser: 41: HDR:                                                                                         
+aa 55 b8 c0 2b 01 00 00 4f 00 00 00                                                                          
+FPGAParser: 41: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 41: crc16 = 0x1123                                                                               
+41: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+42: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 42: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (1048,131), freq_hz=299, deltaFr,
+ ampl = 79, crc_err=1                                                                                        
+FPGAParser: 42: HDR:                                                                                         
+aa 55 18 d4 2b 01 00 00 4f 00 00 00                                                                          
+FPGAParser: 42: INF Payload+CRC16: actual-len=131:                                                           
+HEX:                                                                                                         
+0e 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00                                                                                                        
+FPGAParser: 42: crc16 = 0x0                                                                                  
+================================================                                                             
+43: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 43: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=15939, deltaFr,
+ ampl = 139, crc_err=1                                                                                       
+FPGAParser: 43: HDR:                                                                                         
+aa 55 b8 d0 43 3e 00 00 8b 00 00 00                                                                          
+FPGAParser: 43: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+00 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 43: crc16 = 0x1123                                                                               
+43: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+44: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 164: AIS data is too big!                                                                       
+================================================                                                             
+44: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 44: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (173,22), freq_hz=-370884, delta,
+ ampl = 11, crc_err=1                                                                                        
+FPGAParser: 44: HDR:                                                                                         
+aa 55 ad 50 3c 57 fa ff 0b 00 00 00                                                                          
+FPGAParser: 44: INF Payload+CRC16: actual-len=22:                                                            
+HEX:                                                                                                         
+9c e3 2a 9c dd 9c 9c 9d 9c dd 9c 9d 9d 9e 9d 1d 9d 9d 9e 9d bd 07                                            
+FPGAParser: 44: crc16 = 0x7bd                                                                                
+================================================                                                             
+45: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 45: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-5515, deltaFr,
+ ampl = 115, crc_err=0                                                                                       
+FPGAParser: 45: HDR:                                                                                         
+aa 55 b8 c0 75 ea ff ff 73 00 00 00                                                                          
+FPGAParser: 45: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 45: crc16 = 0x1123                                                                               
+45: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+46: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 167: AIS data is too big!                                                                       
+================================================                                                             
+46: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 171: AIS data is too big!                                                                       
+================================================                                                             
+46: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 46: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=10567, deltaFr,
+ ampl = 154, crc_err=0                                                                                       
+FPGAParser: 46: HDR:                                                                                         
+aa 55 b8 c0 47 29 00 00 9a 00 00 00                                                                          
+FPGAParser: 46: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 46: crc16 = 0x1123                                                                               
+46: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+47: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 47: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (281,36), freq_hz=10567, deltaFr,
+ ampl = 154, crc_err=1                                                                                       
+FPGAParser: 47: HDR:                                                                                         
+aa 55 19 d1 47 29 00 00 9a 00 00 00                                                                          
+FPGAParser: 47: INF Payload+CRC16: actual-len=36:                                                            
+HEX:                                                                                                         
+02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00                                                                                                     
+FPGAParser: 47: crc16 = 0x0                                                                                  
+================================================                                                             
+48: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 48: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=10567, deltaFr,
+ ampl = 95, crc_err=0                                                                                        
+FPGAParser: 48: HDR:                                                                                         
+aa 55 b8 c0 47 29 00 00 5f 00 00 00                                                                          
+FPGAParser: 48: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 48: crc16 = 0x1123                                                                               
+48: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+49: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 49: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 108, crc_err=0                                                                                       
+FPGAParser: 49: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 6c 00 00 00                                                                          
+FPGAParser: 49: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 49: crc16 = 0x1123                                                                               
+49: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+50: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 50: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (791,99), freq_hz=-10568, deltaF,
+ ampl = 108, crc_err=1                                                                                       
+FPGAParser: 50: HDR:                                                                                         
+aa 55 17 d3 b8 d6 ff ff 6c 00 00 00                                                                          
+FPGAParser: 50: INF Payload+CRC16: actual-len=99:                                                            
+HEX:                                                                                                         
+07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00                                                                                                        
+FPGAParser: 50: crc16 = 0x0                                                                                  
+================================================                                                             
+51: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 51: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=15939, deltaFr,
+ ampl = 117, crc_err=0                                                                                       
+FPGAParser: 51: HDR:                                                                                         
+aa 55 b8 c0 43 3e 00 00 75 00 00 00                                                                          
+FPGAParser: 51: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 51: crc16 = 0x1123                                                                               
+51: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+52: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 199: AIS data is too big!                                                                       
+================================================                                                             
+52: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 52: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 142, crc_err=0                                                                                       
+FPGAParser: 52: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 8e 00 00 00                                                                          
+FPGAParser: 52: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 52: crc16 = 0x1123                                                                               
+52: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+53: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 53: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 159, crc_err=0                                                                                       
+FPGAParser: 53: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 9f 00 00 00                                                                          
+FPGAParser: 53: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 53: crc16 = 0x1123                                                                               
+53: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+54: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 54: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 103, crc_err=0                                                                                       
+FPGAParser: 54: HDR:                                                                                         
+aa 55 b8 c0 2b 01 00 00 67 00 00 00                                                                          
+FPGAParser: 54: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 54: crc16 = 0x1123                                                                               
+54: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+55: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 55: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (158,20), freq_hz=-368188, delta,
+ ampl = 7, crc_err=1                                                                                         
+FPGAParser: 55: HDR:                                                                                         
+aa 55 9e 50 c4 61 fa ff 07 00 00 00                                                                          
+FPGAParser: 55: INF Payload+CRC16: actual-len=20:                                                            
+HEX:                                                                                                         
+b7 af e7 5f ff 9d d9 9d 9d 99 9d cd 9d 8d 99 9d c9 9d cd 1d                                                  
+FPGAParser: 55: crc16 = 0x1dcd                                                                               
+================================================                                                             
+56: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 56: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 120, crc_err=0                                                                                       
+FPGAParser: 56: HDR:                                                                                         
+aa 55 b8 c0 2b 01 00 00 78 00 00 00                                                                          
+FPGAParser: 56: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 56: crc16 = 0x1123                                                                               
+56: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+57: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 194: AIS data is too big!                                                                       
+================================================                                                             
+57: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 199: AIS data is too big!                                                                       
+================================================                                                             
+57: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 57: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=137, deltaFrqD,
+ ampl = 100, crc_err=0                                                                                       
+FPGAParser: 57: HDR:                                                                                         
+aa 55 b8 c0 89 00 00 00 64 00 00 00                                                                          
+FPGAParser: 57: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 57: crc16 = 0x1123                                                                               
+57: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+58: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 58: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 138, crc_err=0                                                                                       
+FPGAParser: 58: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 8a 00 00 00                                                                          
+FPGAParser: 58: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 58: crc16 = 0x1123                                                                               
+58: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+59: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 59: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (792,99), freq_hz=-10568, deltaF,
+ ampl = 138, crc_err=1                                                                                       
+FPGAParser: 59: HDR:                                                                                         
+aa 55 18 d3 b8 d6 ff ff 8a 00 00 00                                                                          
+FPGAParser: 59: INF Payload+CRC16: actual-len=99:                                                            
+HEX:                                                                                                         
+07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00                                                                                                        
+FPGAParser: 59: crc16 = 0x0                                                                                  
+================================================                                                             
+60: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 60: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 91, crc_err=0                                                                                        
+FPGAParser: 60: HDR:                                                                                         
+aa 55 b8 c0 2b 01 00 00 5b 00 00 00                                                                          
+FPGAParser: 60: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 60: crc16 = 0x1123                                                                               
+60: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+61: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 195: AIS data is too big!                                                                       
+================================================                                                             
+61: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 61: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5514, deltaFrq,
+ ampl = 110, crc_err=0                                                                                       
+FPGAParser: 61: HDR:                                                                                         
+aa 55 b8 c0 8a 15 00 00 6e 00 00 00                                                                          
+FPGAParser: 61: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 61: crc16 = 0x1123                                                                               
+61: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+62: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 62: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=5352, deltaFrq,
+ ampl = 159, crc_err=0                                                                                       
+FPGAParser: 62: HDR:                                                                                         
+aa 55 b8 c0 e8 14 00 00 9f 00 00 00                                                                          
+FPGAParser: 62: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 62: crc16 = 0x1123                                                                               
+62: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+63: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 63: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (311,39), freq_hz=5352, deltaFrq,
+ ampl = 159, crc_err=1                                                                                       
+FPGAParser: 63: HDR:                                                                                         
+aa 55 37 d1 e8 14 00 00 9f 00 00 00                                                                          
+FPGAParser: 63: INF Payload+CRC16: actual-len=39:                                                            
+HEX:                                                                                                         
+06 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 7f 00 55 55                                                                                            
+FPGAParser: 63: crc16 = 0x5555                                                                               
+================================================                                                             
+64: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 64: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 119, crc_err=0                                                                                       
+FPGAParser: 64: HDR:                                                                                         
+aa 55 b8 c0 2b 01 00 00 77 00 00 00                                                                          
+FPGAParser: 64: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 64: crc16 = 0x1123                                                                               
+64: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+65: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 65: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=10567, deltaFr,
+ ampl = 152, crc_err=0                                                                                       
+FPGAParser: 65: HDR:                                                                                         
+aa 55 b8 c0 47 29 00 00 98 00 00 00                                                                          
+FPGAParser: 65: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 65: crc16 = 0x1123                                                                               
+65: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+66: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 66: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (116,15), freq_hz=-534418, delta,
+ ampl = 6, crc_err=1                                                                                         
+FPGAParser: 66: HDR:                                                                                         
+aa 55 74 50 6e d8 f7 ff 06 00 00 00                                                                          
+FPGAParser: 66: INF Payload+CRC16: actual-len=15:                                                            
+HEX:                                                                                                         
+fe ff 7e bf df ef f7 fb fd 7f bf df ef e1 01                                                                 
+FPGAParser: 66: crc16 = 0x1e1                                                                                
+================================================                                                             
+67: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 67: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10725, deltaF,
+ ampl = 134, crc_err=0                                                                                       
+FPGAParser: 67: HDR:                                                                                         
+aa 55 b8 c0 1b d6 ff ff 86 00 00 00                                                                          
+FPGAParser: 67: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 67: crc16 = 0x1123                                                                               
+67: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+68: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 68: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (192,24), freq_hz=-534418, delta,
+ ampl = 6, crc_err=1                                                                                         
+FPGAParser: 68: HDR:                                                                                         
+aa 55 c0 50 6e d8 f7 ff 06 00 00 00                                                                          
+FPGAParser: 68: INF Payload+CRC16: actual-len=24:                                                            
+HEX:                                                                                                         
+e5 d7 ff ff ff c2 ff ff ea ff ff ff ff ff ff ff ff ff ff ef f7 f4 74 70                                      
+FPGAParser: 68: crc16 = 0x7074                                                                               
+================================================                                                             
+69: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 69: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=10567, deltaFr,
+ ampl = 95, crc_err=0                                                                                        
+FPGAParser: 69: HDR:                                                                                         
+aa 55 b8 c0 47 29 00 00 5f 00 00 00                                                                          
+FPGAParser: 69: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 69: crc16 = 0x1123                                                                               
+69: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+70: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 70: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=137, deltaFrqD,
+ ampl = 112, crc_err=0                                                                                       
+FPGAParser: 70: HDR:                                                                                         
+aa 55 b8 c0 89 00 00 00 70 00 00 00                                                                          
+FPGAParser: 70: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 70: crc16 = 0x1123                                                                               
+70: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+71: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 71: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-5353, deltaFr,
+ ampl = 145, crc_err=0                                                                                       
+FPGAParser: 71: HDR:                                                                                         
+aa 55 b8 c0 17 eb ff ff 91 00 00 00                                                                          
+FPGAParser: 71: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 71: crc16 = 0x1123                                                                               
+71: packet DUPLICATE (CRC match).                                                                            
+TransmitDec: Sending AIS packet -> MZU, len=1280, CRC16=0xced2                                               
+================================================                                                             
+72: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 72: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (567,71), freq_hz=-5353, deltaFr,
+ ampl = 145, crc_err=1                                                                                       
+FPGAParser: 72: HDR:                                                                                         
+aa 55 37 d2 17 eb ff ff 91 00 00 00                                                                          
+FPGAParser: 72: INF Payload+CRC16: actual-len=71:                                                            
+HEX:                                                                                                         
+05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              
+00 00 fe 55 55 55                                                                                            
+FPGAParser: 72: crc16 = 0x5555                                                                               
+================================================                                                             
+73: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 73: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 78, crc_err=0                                                                                        
+FPGAParser: 73: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 4e 00 00 00                                                                          
+FPGAParser: 73: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 73: crc16 = 0x1123                                                                               
+73: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+74: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 74: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10725, deltaF,
+ ampl = 157, crc_err=0                                                                                       
+FPGAParser: 74: HDR:                                                                                         
+aa 55 b8 c0 1b d6 ff ff 9d 00 00 00                                                                          
+FPGAParser: 74: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 74: crc16 = 0x1123                                                                               
+74: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+75: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 200: AIS data is too big!                                                                       
+SysSwIO: Read packet from task, len=1280                                                                     
+SysSwIO: Send -> packet to addr=33, packet-len=1280                                                          
+================================================                                                             
+75: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 199: AIS data is too big!                                                                       
+================================================                                                             
+75: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 75: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10725, deltaF,
+ ampl = 150, crc_err=0                                                                                       
+FPGAParser: 75: HDR:                                                                                         
+aa 55 b8 c0 1b d6 ff ff 96 00 00 00                                                                          
+FPGAParser: 75: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 75: crc16 = 0x1123                                                                               
+75: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+76: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 195: AIS data is too big!                                                                       
+================================================                                                             
+76: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+len(bytes) = 194: AIS data is too big!                                                                       
+================================================                                                             
+76: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 76: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10725, deltaF,
+ ampl = 136, crc_err=0                                                                                       
+FPGAParser: 76: HDR:                                                                                         
+aa 55 b8 c0 1b d6 ff ff 88 00 00 00                                                                          
+FPGAParser: 76: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 76: crc16 = 0x1123                                                                               
+76: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+77: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 77: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 156, crc_err=0                                                                                       
+FPGAParser: 77: HDR:                                                                                         
+aa 55 b8 c0 b8 d6 ff ff 9c 00 00 00                                                                          
+FPGAParser: 77: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 77: crc16 = 0x1123                                                                               
+77: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+78: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 78: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (280,35), freq_hz=-10568, deltaF,
+ ampl = 156, crc_err=1                                                                                       
+FPGAParser: 78: HDR:                                                                                         
+aa 55 18 d1 b8 d6 ff ff 9c 00 00 00                                                                          
+FPGAParser: 78: INF Payload+CRC16: actual-len=35:                                                            
+HEX:                                                                                                         
+05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           
+00 00                                                                                                        
+FPGAParser: 78: crc16 = 0x0                                                                                  
+================================================                                                             
+79: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 79: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-138, deltaFrq,
+ ampl = 95, crc_err=0                                                                                        
+FPGAParser: 79: HDR:                                                                                         
+aa 55 b8 c0 76 ff ff ff 5f 00 00 00                                                                          
+FPGAParser: 79: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 79: crc16 = 0x1123                                                                               
+79: packet DUPLICATE (CRC match).                                                                            
+================================================                                                             
+80: DDC_INF_MSG_TOKEN=0x55aa                                                                                 
+FPGAParser: 80: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=137, deltaFrqD,
+ ampl = 108, crc_err=0                                                                                       
+FPGAParser: 80: HDR:                                                                                         
+aa 55 b8 c0 89 00 00 00 6c 00 00 00                                                                          
+FPGAParser: 80: INF Payload+CRC16: actual-len=23:                                                            
+HEX:                                                                                                         
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11                                         
+FPGAParser: 80: crc16 = 0x1123                                                                               
+80: packet DUPLICATE (CRC match).                                                                            
+================================================
+81: DDC_INF_MSG_TOKEN=0x55aa
+FPGAParser: 81: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=299, deltaFrqD,
+ ampl = 147, crc_err=0
+FPGAParser: 81: HDR:
+aa 55 b8 c0 2b 01 00 00 93 00 00 00 
+FPGAParser: 81: INF Payload+CRC16: actual-len=23:
+HEX:
+04 00 00 00 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 23 11 
+FPGAParser: 81: crc16 = 0x1123
+81: packet DUPLICATE (CRC match).
+================================================
+82: DDC_INF_MSG_TOKEN=0x55aa
+FPGAParser: 82: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (311,39), freq_hz=299, deltaFrqD,
+ ampl = 147, crc_err=1
+FPGAParser: 82: HDR:
+aa 55 37 d1 2b 01 00 00 93 00 00 00 
+FPGAParser: 82: INF Payload+CRC16: actual-len=39:
+HEX:
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 7f 00 55 55 
+FPGAParser: 82: crc16 = 0x5555
+================================================
+83: DDC_INF_MSG_TOKEN=0x55aa
+FPGAParser: 83: INFO packet HEADER, token=0x55aa, chan=2, len(bits,bytes) = (184,23), freq_hz=-10568, deltaF,
+ ampl = 147, crc_err=0
+FPGAParser: 83: HDR:
+aa 55 b8 c0 b8 d6 ff ff 93 00 00 00 
+FPGAParser: 83: INF Payload+CRC16: 
+

@@ -1,0 +1,20 @@
+#ifndef BSP_MULTICORE_CONFIG_H
+#define BSP_MULTICORE_CONFIG_H
+
+#define     CONFIG_MCT03P
+
+/* Taken from mcLinux .config for MCT-03PEM-6U board */
+#define CONFIG_MULTICORE_CLOCKFREQ_MHZ          10
+
+#define CONFIG_MULTICORE_SWIC_DEF_WORK_SPEED    200
+#define CONFIG_MULTICORE_SWIC_START_SPEED       10
+#define CONFIG_MULTICORE_SWIC_QTY				2
+
+#define CONFIG_MULTICORE_MFBSP_QTY				5
+#define CONFIG_MULTICORE_LPORT_RATE_MHZ         2
+
+#if 1
+    #define CONFIG_ENABLE_CPU_CACHE
+#endif
+
+#endif

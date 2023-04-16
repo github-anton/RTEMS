@@ -1,0 +1,461 @@
+bash-4.4# mdb -u
+usb mode
+MDB version: 4.70 (17/03/2014)
+* [1] serial number: 083 2017-05
+mdb> reset
+Device: idcode=0x40777001
+OSCR:    0x200
+PCfetch: 0xbfc00000
+PCdec:   0
+PCexec:  0
+PCmem:   0
+IRdec:   0
+mdb> set 0xb82f4004 0xffffffff
+mdb> set 0xb82f4000 0x8c94           # RAM 60MHz, CPU 100Mhz
+mdb> set 0x182f1000 0x3f00c0
+mdb> set 0x182f1014 0x030d0021
+mdb> set 0x182f1018 0x00f50223
+mdb> set 0x182f101c 0x1
+mdb> loadelf o-optimize/rtMpo.exe 
+entry point: 0x80010008
+.text   addr: 0x80010000, size: 0x000649d4
+.init   addr: 0x800749d4, size: 0x00000038
+.fini   addr: 0x80074a0c, size: 0x00000028
+.ctors  addr: 0x80074a34, size: 0x00000018
+.dtors  addr: 0x80074a4c, size: 0x00000008
+.rtemsroset     skipping, has type SHT_NOBITS
+.rdata  addr: 0x80074a60, size: 0x00004c40
+.reginfo        addr: 0x800796a0, size: 0x00000018
+.MIPS.abiflags  addr: 0x800796b8, size: 0x00000018
+.rel.dyn        addr: 0x800796d0, size: 0x00000010
+.data   addr: 0x800796e0, size: 0x000008e0
+.jcr    addr: 0x80079fc0, size: 0x00000004
+usb_read_oncd(0x0) exit ERR err=-110
+Fatal error: usb_read_oncd err=-110
+bash-4.4# mdb -u
+usb mode
+MDB version: 4.70 (17/03/2014)
+* [1] serial number: 083 2017-05
+mdb> reset
+Device: idcode=0x40777001
+OSCR:    0x200
+PCfetch: 0xbfc00000
+PCdec:   0
+PCexec:  0
+PCmem:   0
+IRdec:   0
+mdb> set 0xb82f4004 0xffffffff
+mdb> set 0xb82f4000 0x8c94           # RAM 60MHz, CPU 100Mhz
+mdb> set 0x182f1000 0x3f00c0
+mdb> set 0x182f1014 0x030d0021
+mdb> set 0x182f1018 0x00f50223
+mdb> set 0x182f101c 0x1
+mdb> loadelf o-optimize/rtMpo.exe 
+entry point: 0x80010008
+.text   addr: 0x80010000, size: 0x000649d4
+.init   addr: 0x800749d4, size: 0x00000038
+.fini   addr: 0x80074a0c, size: 0x00000028
+.ctors  addr: 0x80074a34, size: 0x00000018
+.dtors  addr: 0x80074a4c, size: 0x00000008
+.rtemsroset     skipping, has type SHT_NOBITS
+.rdata  addr: 0x80074a60, size: 0x00004c40
+.reginfo        addr: 0x800796a0, size: 0x00000018
+.MIPS.abiflags  addr: 0x800796b8, size: 0x00000018
+.rel.dyn        addr: 0x800796d0, size: 0x00000010
+.data   addr: 0x800796e0, size: 0x000008e0
+.jcr    addr: 0x80079fc0, size: 0x00000004
+.sdata  addr: 0x80079fc4, size: 0x00000004
+.bss    skipping, has type SHT_NOBITS
+mdb> run
+ok
+Ctrl-C
+OSCR:    0x220
+PCfetch: 0x80042dd8
+PCdec:   0x80042dd4
+PCexec:  0x80042dd0
+PCmem:   0x80042dcc
+IRdec:   0xafc20000
+mdb> bp 1 0x8004139c
+mdb> run
+
+Ctrl-C
+OSCR:    0x220
+PCfetch: 0x80052a0c
+PCdec:   0x80052a14
+PCexec:  0x80052a10
+PCmem:   0x80052a0c
+IRdec:   0
+mdb> bp 1 0x8003a1a8
+mdb> run
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+
+PCfetch: 0x8003a1ac
+PCdec:   0x8003a1a8
+PCexec:  0x8003a1a4
+PCmem:   0x8003a1a0
+IRdec:   0xafb00024
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1b0
+PCdec:   0x8003a1ac
+PCexec:  0x8003a1a8
+PCmem:   0x8003a1a4
+IRdec:   0x3a0f025
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a1b4
+PCdec:   0x8003a1b0
+PCexec:  0x8003a1ac
+PCmem:   0x8003a1a8
+IRdec:   0xafc40030
+mdb> show v0
+v0: 0x800af75c
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1b8
+PCdec:   0x8003a1b4
+PCexec:  0x8003a1b0
+PCmem:   0x8003a1ac
+IRdec:   0x27c30014
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1bc
+PCdec:   0x8003a1b8
+PCexec:  0x8003a1b4
+PCmem:   0x8003a1b0
+IRdec:   0x27c20018
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1c0
+PCdec:   0x8003a1bc
+PCexec:  0x8003a1b8
+PCmem:   0x8003a1b4
+IRdec:   0x8fc40030
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1c4
+PCdec:   0x8003a1c0
+PCexec:  0x8003a1bc
+PCmem:   0x8003a1b8
+IRdec:   0x602825
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a1c8
+PCdec:   0x8003a1c4
+PCexec:  0x8003a1c0
+PCmem:   0x8003a1bc
+IRdec:   0x403025
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1cc
+PCdec:   0x8003a1c8
+PCexec:  0x8003a1c4
+PCmem:   0x8003a1c0
+IRdec:   0xc0158a6
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80056298
+PCdec:   0x8003a1cc
+PCexec:  0x8003a1c8
+PCmem:   0x8003a1c4
+IRdec:   0
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8005629c
+PCdec:   0x80056298
+PCexec:  0x8003a1cc
+PCmem:   0x8003a1c8
+IRdec:   0x27bdffe8
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800562a0
+PCdec:   0x8005629c
+PCexec:  0x80056298
+PCmem:   0x8003a1cc
+IRdec:   0xafbf0014
+mdb>  bp 1 0x8003a1d8
+mdb> run
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+
+PCfetch: 0x8003a1dc
+PCdec:   0x8003a1d8
+PCexec:  0x8003a1d4
+PCmem:   0x8003a1d0
+IRdec:   0x10400005
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1dc
+PCdec:   0x8003a1d8
+PCexec:  0x8003a1d8
+PCmem:   0x8003a1d4
+IRdec:   0x10400005
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a1e0
+PCdec:   0x8003a1dc
+PCexec:  0x8003a1d8
+PCmem:   0x8003a1d8
+IRdec:   0
+mdb> show v0
+v0: 0
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8003a1f0
+PCdec:   0x8003a1e0
+PCexec:  0x8003a1dc
+PCmem:   0x8003a1d8
+IRdec:   0
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a1f4
+PCdec:   0x8003a1f0
+PCexec:  0x8003a1f0
+PCmem:   0x8003a1dc
+IRdec:   0x26040014
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a1f8
+PCdec:   0x8003a1f4
+PCexec:  0x8003a1f0
+PCmem:   0x8003a1f0
+IRdec:   0x8e030008
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a1fc
+PCdec:   0x8003a1f8
+PCexec:  0x8003a1f4
+PCmem:   0x8003a1f0
+IRdec:   0x27c20018
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a200
+PCdec:   0x8003a1fc
+PCexec:  0x8003a1f8
+PCmem:   0x8003a1f4
+IRdec:   0x602825
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a204
+PCdec:   0x8003a200
+PCexec:  0x8003a1fc
+PCmem:   0x8003a1f8
+IRdec:   0x3025
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a208
+PCdec:   0x8003a204
+PCexec:  0x8003a200
+PCmem:   0x8003a1fc
+IRdec:   0x403825
+mdb> 
+OSCR:    0x220
+PCfetch: 0x8003a20c
+PCdec:   0x8003a208
+PCexec:  0x8003a204
+PCmem:   0x8003a200
+IRdec:   0xc0104f3
+mdb> bp 0 0x8003a214
+mdb> step
+OSCR:    0x220
+PCfetch: 0x800413cc
+PCdec:   0x8003a20c
+PCexec:  0x8003a208
+PCmem:   0x8003a204
+IRdec:   0
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413d0
+PCdec:   0x800413cc
+PCexec:  0x8003a20c
+PCmem:   0x8003a208
+IRdec:   0x27bdffc8
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413d4
+PCdec:   0x800413d0
+PCexec:  0x800413cc
+PCmem:   0x8003a20c
+IRdec:   0xafbf0034
+mdb> step
+OSCR:    0x220
+PCfetch: 0x800413d8
+PCdec:   0x800413d4
+PCexec:  0x800413d0
+PCmem:   0x800413cc
+IRdec:   0xafbe0030
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413dc
+PCdec:   0x800413d8
+PCexec:  0x800413d4
+PCmem:   0x800413d0
+IRdec:   0xafb0002c
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413e0
+PCdec:   0x800413dc
+PCexec:  0x800413d8
+PCmem:   0x800413d4
+IRdec:   0x3a0f025
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413e4
+PCdec:   0x800413e0
+PCexec:  0x800413dc
+PCmem:   0x800413d8
+IRdec:   0xafc40038
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413e8
+PCdec:   0x800413e4
+PCexec:  0x800413e0
+PCmem:   0x800413dc
+IRdec:   0xafc5003c
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413ec
+PCdec:   0x800413e8
+PCexec:  0x800413e4
+PCmem:   0x800413e0
+IRdec:   0xafc60040
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413f0
+PCdec:   0x800413ec
+PCexec:  0x800413e8
+PCmem:   0x800413e4
+IRdec:   0xafc70044
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413f4
+PCdec:   0x800413f0
+PCexec:  0x800413ec
+PCmem:   0x800413e8
+IRdec:   0x8fc20038
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413f8
+PCdec:   0x800413f4
+PCexec:  0x800413f0
+PCmem:   0x800413ec
+IRdec:   0x8c420028
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413f8
+PCdec:   0x800413f4
+PCexec:  0x800413f4
+PCmem:   0x800413f0
+IRdec:   0x8c420028
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413fc
+PCdec:   0x800413f8
+PCexec:  0x800413f4
+PCmem:   0x800413f4
+IRdec:   0xafc20010
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800413fc
+PCdec:   0x800413f8
+PCexec:  0x800413f8
+PCmem:   0x800413f4
+IRdec:   0xafc20010
+mdb> step
+OSCR:    0x220
+PCfetch: 0x80041400
+PCdec:   0x800413fc
+PCexec:  0x800413f8
+PCmem:   0x800413f8
+IRdec:   0x8fc20038
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041404
+PCdec:   0x80041400
+PCexec:  0x800413fc
+PCmem:   0x800413f8
+IRdec:   0x90420018
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041404
+PCdec:   0x80041400
+PCexec:  0x80041400
+PCmem:   0x800413fc
+IRdec:   0x90420018
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041408
+PCdec:   0x80041404
+PCexec:  0x80041400
+PCmem:   0x80041400
+IRdec:   0x10400017
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041408
+PCdec:   0x80041404
+PCexec:  0x80041404
+PCmem:   0x80041400
+IRdec:   0x10400017
+mdb> show v0
+v0: 0x1
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8004140c
+PCdec:   0x80041408
+PCexec:  0x80041404
+PCmem:   0x80041404
+IRdec:   0
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041410
+PCdec:   0x8004140c
+PCexec:  0x80041408
+PCmem:   0x80041404
+IRdec:   0x8fc40010
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041414
+PCdec:   0x80041410
+PCexec:  0x8004140c
+PCmem:   0x80041408
+IRdec:   0xc0104b9
+mdb> 
+OSCR:    0x220
+PCfetch: 0x800412e4
+PCdec:   0x80041414
+PCexec:  0x80041410
+PCmem:   0x8004140c
+IRdec:   0
+mdb> bp 1 0x80041420
+mdb> run
+OSCR:    0x8260 Debug mode triggered by watchpoint 1.
+
+PCfetch: 0x80041424
+PCdec:   0x80041420
+PCexec:  0x8004141c
+PCmem:   0x80041418
+IRdec:   0x10400010
+mdb> step
+OSCR:    0x220
+PCfetch: 0x80041428
+PCdec:   0x80041424
+PCexec:  0x80041420
+PCmem:   0x8004141c
+IRdec:   0
+mdb> show v0
+v0: 0x1
+mdb> step
+OSCR:    0x220
+PCfetch: 0x8004142c
+PCdec:   0x80041428
+PCexec:  0x80041424
+PCmem:   0x80041420
+IRdec:   0x40026000
+mdb> 
+OSCR:    0x220
+PCfetch: 0x80041430
+PCdec:   0x8004142c
+PCexec:  0x80041428
+PCmem:   0x80041424
+IRdec:   0
+mdb> 
+ 

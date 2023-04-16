@@ -1,0 +1,455 @@
+Clock_mask: 8000                                                                                                            
+swic.c: swic_initialize(): Invoked, major=0x2, minor=0x0                                                                    
+swic.c: swic_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                                   
+swic.c: swic_initialize(): Check register's addresses:                                                                      
+swic.c: swic_initialize(): & MC_ROUTING_TABLE[0] = 0xB82FA400                                                               
+swic.c: swic_initialize(): & MC_GSPW_ADG[0] = 0xB82FA0EC                                                                    
+
+swic.c: swic_initialize(): & MC_SWIC_TX_DATA_CSR(0) = 0xB82FA8C0                                                            
+swic.c: swic_initialize(): & MC_SWIC_TX_DATA_CP(0) = 0xB82FA8C4                                                             
+swic.c: swic_initialize(): & MC_SWIC_TX_DATA_IR(0) = 0xB82FA8C8                                                             
+swic.c: swic_initialize(): & MC_SWIC_TX_DATA_RUN(0) = 0xB82FA8CC                                                            
+
+swic.c: swic_initialize(): & MC_SWIC_TX_DESC_CSR(0) = 0xB82FA880                                                            
+swic.c: swic_initialize(): & MC_SWIC_TX_DESC_CP(0) = 0xB82FA884                                                             
+swic.c: swic_initialize(): & MC_SWIC_TX_DESC_IR(0) = 0xB82FA888                                                             
+swic.c: swic_initialize(): & MC_SWIC_TX_DESC_RUN(0) = 0xB82FA88C                                                            
+
+swic.c: swic_initialize(): & MC_SWIC_TX_SPEED(0) = 0xB82FA0BC                                                               
+swic.c: swic_initialize(): & MC_SWIC_TX_SPEED(1) = 0xB82FA0C0                                                               
+swic.c: swic_initialize(): & MC_GSPW_TX_SPEED(2) = 0xB82FA0CC                                                               
+swic.c: swic_initialize(): & MC_GSPW_PMA_MODE(2) = 0xB82FA11C                                                               
+swic.c: swic_initialize(): & MC_GSPW_TX_SPEED(3) = 0xB82FA0D0                                                               
+swic.c: swic_initialize(): & MC_GSPW_PMA_MODE(3) = 0xB82FA120                                                               
+
+swic.c: swic_initialize(): & MC_SPW_MODE_CR(0) = 0xB82FA0A4                                                                 
+swic.c: swic_initialize(): & MC_SPW_MODE_CR(1) = 0xB82FA0A8                                                                 
+swic.c: swic_initialize(): & MC_SPW_MODE_CR(4) = 0xB82FA0B4                                                                 
+swic.c: swic_initialize(): & MC_SPW_MODE_CR(5) = 0xB82FA0B8                                                                 
+swic.c: swic_initialize(): & MC_MODE_R(0) = 0xB82FA00C                                                                      
+swic.c: swic_form_routing_table(): Forming routing table...                                                                 
+swic.c: swic_form_routing_table(): MC_ROUTING_TABLE[256]={                                                                  
+0x1, 0x2, 0x4, 0x8, 0x10, 0x20, 0x40, 0x0, 0x0, 0x0, 0x0, 0x0,                                                              
+0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0,                                                                 
+0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1, 0x1,                                                                 
+0x1, 0x1, 0x1, 0x1}                                                                                                         
+swic.c: swic_gspw_form_adg(): Form adg...                                                                                   
+swic.c: swic_gspw_form_adg(): MC_GSPW_ADG[6]={0x2, 0x4, 0x8, 0x10, 0x20, 0x40}                                              
+
+
+*** BEGIN OF TEST Spacswic.c: swic_open(): Invoked, major=0x2, minor=0x0                                                    
+swic.c: swic_struct_init(): swic_struct_init, port = 0                                                                      
+eWire threaded ***                                                                                                          
+swic.c: swic_struct_init(): CSR in chain: 00003001, chain addr = A00D19F0                                                   
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_dma_rx_desc_ih ) = 0                                            
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_dma_rx_data_ih ) = 0                                            
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_dma_tx_data_ih ) = 0                                            
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_connected_ih ) = 0                                              
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_time_ih ) = 0                                                   
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_tx_desc_ih ) = 0                                                
+swic.c: swic_open(): rtems_interrupt_handler_install ( swic_disconnected_ih ) = 0                                           
+swic.c: swic_open(): MASKR0 = 0xE3720030, QSTR0 = 0x0000000F                                                                
+swic.c: swic_start(): Setup transmit speed:                                                                                 
+swic.c: swic_start(): MC_SWIC_TX_SPEED(0) = 000C0B02                                                                        
+swic.c: swic_start(): MC_SWIC_TX_SPEED(1) = 000C0B02                                                                        
+swic.c: swic_start(): MC_GSPW_PMA_MODE(2) = 001326E0                                                                        
+swic.c: swic_start(): MC_GSPW_TX_SPEED(2) = 00003FC1                                                                        
+swic.c: swic_start(): MC_GSPW_PMA_MODE(3) = 001326E0                                                                        
+swic.c: swic_start(): MC_GSPW_TX_SPEED(3) = 00003FC1                                                                        
+swic.c: swic_start(): Setup receive speed:                                                                                  
+swic.c: swic_start(): MC_GSPW_PMA_MODE(2) = 00132699                                                                        
+swic.c: swic_start(): MC_GSPW_PMA_MODE(3) = 001C0299                                                                        
+swic.c: swic_start(): MC_SPW_MODE_CR(4) = 02C83419                                                                          
+swic.c: swic_start(): MC_SPW_MODE_CR(5) = 02C83419                                                                          
+swic.c: swic_start(): MC_MODE_R(0) = 0x280000B                                                                              
+swic.c: swic_start(): Setup link connection:                                                                                
+swic.c: swic_start(): MC_SPW_MODE_CR(0) = 0000340E                                                                          
+swic.c: swic_start(): MC_RISC_IRQ_MASK=0x1FFF                                                                               
+swic.c: swic_start(): MC_QSTR0 = 0x100000F                                                                                  
+swic.c: swic_start(): MC_SPW_MODE_CR(1) = 0000340E                                                                          
+swic.c: swic_start(): MC_SPW_MODE_CR(4) = 0000341E                                                                          
+swic.c: swic_start(): MC_SPW_MODE_CR(5) = 0000341E                                                                          
+swic.c: swic_connected_ih(): BEGIN, channel: 0, STATUS = 00000750                                                           
+swic.c: swic_connected_ih(): MC_STATE_R=0x627620                                                                            
+swic.c: swic_connected_ih(): CLEAR IRQ, MC_STATE_R=0x7620                                                                   
+swic.c: swic_start_dma(): swic_start_dma 0xA800, half_dma_no = 0                                                            
+swic.c: swic_start_dma(): pcur->chain_addr = A00D19F0                                                                       
+swic.c: swic_start_dma(): First CSR in chain: 00003001                                                                      
+swic.c: swic_start_dma(): swic_start_dma 0xA840, half_dma_no = 0                                                            
+swic.c: swic_start_dma(): pcur->chain_addr = 00000000                                                                       
+swic.c: swic_start_dma(): pcur->buf = A00D1FF0                                                                              
+swic.c: swic_connected_ih(): RELEASE semaphore u->stws: *0xA007FAD4=0x1A01000B                                              
+swic.c: swic_connected_ih(): DONE                                                                                           
+swic.c: swic_open(): Done                                                                                                   
+SpaceWire_threadedswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                     
+swic.c: swic_control(): SPW_SET_SPEED request, data[0]=10                                                                   
+Test.cpp: readerProc(): Setting up speed to 10Mbit/s                                                                        
+SpaceWire_threadedTest.cpp: readerProc(): setTxSpeed() returned 0                                                           
+SpaceWire_threadedTest.swic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+cpp: readerProc(): Start reading...                                                                                         
+SpaceWire_tswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                               
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D16F0                                                                      
+swic.c: swic_read(): === swic_read, channel = 0, no data                                                                    
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA800) = 00003001, second empty: 1, dma i0
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA840) = 0FFF2001, second empty: 1, dma i0
+swic.c: swic_read(): === swic_read, channel = 0, waiting for a packet                                                       
+swic.c: swic_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001                                                 
+hreadedTest.cpp: readerProc(): CONNECTED                                                                                    
+swic.c: swic_dma_rx_desc_ih(): Descriptor has been received, pdesc=0xA00D16F0, desc=0xA0000006, type=0x1                    
+swic.c: swic_read(): === swic_read, channel = 0, waiting done                                                               
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D1FF0                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 8, DMA CSR = 0FFE2001, IR = 000D1FF8, addr = 000D1FF0                      
+swic.c: swic_read(): swic_avail_size = 8, rest = 6                                                                          
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32768                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 384                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 6                                                         
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=5, from addr=88, firts 32 bytes:                        
+0x58 0x41 0x20 0xF 0xD 0x93 0xBE 0xA9 0xAD 0x44 0x40 0x87 0x69 0xDA 0x38 0xAE 0xE4 0x66 0xD5 0xAF 0xBC 0xAF 0xD3 0x2B 0x8 0 
+SpaceWire_threadedswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                     
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+Test.cpp: readerProc(): wrongPackets=0                                                                                      
+SpaceWirswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                                  
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D16F8                                                                      
+swic.c: swic_read(): === swic_read, channel = 0, no data                                                                    
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA800) = 00003001, second empty: 1, dma i0
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA840) = 0FFE2001, second empty: 1, dma i0
+swic.c: swic_read(): === swic_read, channel = 0, waiting for a packet                                                       
+swic.c: swic_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFE2001                                                 
+e_threadedTest.cpp: readerProc(): CONNECTED                                                                                 
+swic.c: swic_disconnected_ih(): BEGIN, channel: 0, STATUS = 00000712                                                        
+swic.c: swic_disconnected_ih(): MC_STATE_R=0x827E00                                                                         
+swic.c: swic_disconnected_ih(): CLEAR IRQ, MC_STATE_R=0x27E00                                                               
+swic.c: swic_disconnected_ih(): DONE                                                                                        
+swic.c: swic_dma_rx_desc_ih(): Descriptor has been received, pdesc=0xA00D16F8, desc=0xC0000002, type=0x1                    
+swic.c: swic_connected_ih(): BEGIN, channel: 0, STATUS = 00000102                                                           
+swic.c: swic_connected_ih(): MC_STATE_R=0x27E00                                                                             
+swic.c: swic_connected_ih(): CLEAR IRQ, MC_STATE_R=0x7E00                                                                   
+swic.c: swic_start_dma(): swic_start_dma 0xA800, half_dma_no = 0                                                            
+swic.c: swic_start_dma(): pcur->chain_addr = A00D19F0                                                                       
+swic.c: swic_start_dma(): First CSR in chain: 00003001                                                                      
+swic.c: swic_start_dma(): swic_start_dma 0xA840, half_dma_no = 0                                                            
+swic.c: swic_start_dma(): pcur->chain_addr = 00000000                                                                       
+swic.c: swic_start_dma(): pcur->buf = A00D1FF0                                                                              
+swic.c: swic_connected_ih(): RELEASE semaphore u->stws: *0xA007FAD4=0x1A01000B                                              
+swic.c: swic_connected_ih(): DONE                                                                                           
+swic.c: swic_read(): === swic_read, channel = 0, waiting done                                                               
+swic.c: swic_read(): pdesc->type = 2                                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 376                                           
+swic.c: swic_read(): Got new pdesc=0xA00D1700                                                                               
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 0, size_to_end = 32760                                         
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=-1, from addr=88, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                         
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x600                                             
+adedTest.cpp: readerProc(): wrongPackets=0                                                                                  
+SpaceWire_threadedTeswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                      
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1700                                                                      
+swic.c: swic_read(): === swic_read, channel = 0, no data                                                                    
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA800) = 00003001, second empty: 1, dma i0
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA840) = 0FFF2001, second empty: 1, dma i0
+swic.c: swic_read(): === swic_read, channel = 0, waiting for a packet                                                       
+swic.c: swic_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001                                                 
+st.cpp: readerProc(): CONNECTED                                                                                             
+swic.c: swic_dma_rx_desc_ih(): Descriptor has been received, pdesc=0xA00D1700, desc=0xC0000001, type=0x1                    
+swic.c: swic_disconnected_ih(): BEGIN, channel: 0, STATUS = 00000332                                                        
+swic.c: swic_disconnected_ih(): MC_STATE_R=0x827E00                                                                         
+swic.c: swic_disconnected_ih(): CLEAR IRQ, MC_STATE_R=0x27E00                                                               
+swic.c: swic_disconnected_ih(): DONE                                                                                        
+swic.c: swic_connected_ih(): BEGIN, channel: 0, STATUS = 00000312                                                           
+swic.c: swic_connected_ih(): MC_STATE_R=0x27E00                                                                             
+swic.c: swic_connected_ih(): CLEAR IRQ, MC_STATE_R=0x7E00                                                                   
+swic.c: swic_start_dma(): swic_start_dma 0xA800, half_dma_no = 0                                                            
+swic.c: swic_start_dma(): pcur->chain_addr = A00D19F0                                                                       
+swic.c: swic_start_dma(): First CSR in chain: 00003001                                                                      
+swic.c: swic_start_dma(): swic_start_dma 0xA840, half_dma_no = 0                                                            
+swic.c: swic_start_dma(): pcur->chain_addr = 00000000                                                                       
+swic.c: swic_start_dma(): pcur->buf = A00D1FF0                                                                              
+swic.c: swic_connected_ih(): RELEASE semaphore u->stws: *0xA007FAD4=0x1A01000B                                              
+swic.c: swic_connected_ih(): DONE                                                                                           
+swic.c: swic_dma_rx_desc_ih(): Descriptor has been received, pdesc=0xA00D1700, desc=0xA0000001, type=0x1                    
+swic.c: swic_read(): === swic_read, channel = 0, waiting done                                                               
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D1FF8                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 152, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D1FF8                    
+swic.c: swic_read(): swic_avail_size = 152, rest = 1                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32760                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 368                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=88, firts 32 bytes:                        
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_tswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                            
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+hreadedTest.cpp: readerProc(): wrongPackets=0                                                                               
+SpaceWire_threadeswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                         
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1708                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2000                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 144, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2000                    
+swic.c: swic_read(): swic_avail_size = 144, rest = 1                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32752                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 360                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+dTest.cpp: readerProc(): CONNECTED                                                                                          
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=88, firts 32 bytes:                        
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadedTest.cswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                               
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+pp: readerProc(): wrongPackets=0                                                                                            
+SpaceWire_threswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                            
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1710                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2008                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 136, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2008                    
+swic.c: swic_read(): swic_avail_size = 136, rest = 2                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32744                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 352                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 2                                                         
+adedTest.cpp: readerProc(): CONNECTED                                                                                       
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=1, from addr=128, firts 32 bytes:                       
+0x80 0x41 0x20 0xF 0xD 0x93 0xBE 0xA9 0xAD 0x44 0x40 0x87 0x69 0xDA 0x38 0xAE 0xE4 0x66 0xD5 0xAF 0xBC 0xAF 0xD3 0x2B 0x8 0 
+SpaceWire_threadedTeswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                   
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+st.cpp: readerProc(): wrongPackets=0                                                                                        
+SpaceWire_swic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                                
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1718                                                                      
+swic.c: swic_read(): pdesc->type = 2                                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 344                                           
+swic.c: swic_read(): Got new pdesc=0xA00D1720                                                                               
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32736                                         
+threadedTest.cpp: readerProc(): CONNECTED                                                                                   
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=-1, from addr=128, firts 32 bytes:                      
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threaswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                        
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+dedTest.cpp: readerProc(): wrongPackets=0                                                                                   
+SpaceWire_threadedTesswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                     
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1720                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2018                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 120, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2018                    
+swic.c: swic_read(): swic_avail_size = 120, rest = 1                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32728                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 336                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+t.cpp: readerProc(): CONNECTED                                                                                              
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_tswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                            
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+hreadedTest.cpp: readerProc(): wrongPackets=0                                                                               
+SpaceWire_threadeswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                         
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1728                                                                      
+swic.c: swic_read(): pdesc->type = 2                                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 328                                           
+swic.c: swic_read(): Got new pdesc=0xA00D1730                                                                               
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32720                                         
+dTest.cpp: readerProc(): CONNECTED                                                                                          
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=-1, from addr=128, firts 32 bytes:                      
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadedTestswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                 
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+.cpp: readerProc(): wrongPackets=0                                                                                          
+SpaceWire_thswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                              
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1730                                                                      
+swic.c: swic_read(): pdesc->type = 2                                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 320                                           
+swic.c: swic_read(): Got new pdesc=0xA00D1738                                                                               
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32712                                         
+readedTest.cpp: readerProc(): CONNECTED                                                                                     
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=-1, from addr=128, firts 32 bytes:                      
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadeswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                      
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+dTest.cpp: readerProc(): wrongPackets=0                                                                                     
+SpaceWiswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                                   
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1738                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2030                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 96, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2030                     
+swic.c: swic_read(): swic_avail_size = 96, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32704                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 312                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+re_threadedTest.cpp: readerProc(): CONNECTED                                                                                
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_thrswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                          
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+eadedTest.cpp: readerProc(): wrongPackets=0                                                                                 
+SpaceWire_threadedTswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                       
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1740                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2038                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 88, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2038                     
+swic.c: swic_read(): swic_avail_size = 88, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32696                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 304                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+est.cpp: readerProc(): CONNECTED                                                                                            
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadedTest.cpswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                              
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+p: readerProc(): wrongPackets=0                                                                                             
+SpaceWire_threaswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                           
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1748                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2040                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 80, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2040                     
+swic.c: swic_read(): swic_avail_size = 80, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32688                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 296                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+dedTest.cpp: readerProc(): CONNECTED                                                                                        
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadedTesswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                  
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+t.cpp: readerProc(): wrongPackets=0                                                                                         
+SpaceWire_tswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                               
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1750                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2048                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 72, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2048                     
+swic.c: swic_read(): swic_avail_size = 72, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32680                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 288                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+hreadedTest.cpp: readerProc(): CONNECTED                                                                                    
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadeswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                      
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+dTest.cpp: readerProc(): wrongPackets=0                                                                                     
+SpaceWiswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                                   
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1758                                                                      
+swic.c: swic_read(): pdesc->type = 2                                                                                        
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 280                                           
+swic.c: swic_read(): Got new pdesc=0xA00D1760                                                                               
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32672                                         
+re_threadedTest.cpp: readerProc(): CONNECTED                                                                                
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=-1, from addr=128, firts 32 bytes:                      
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_thswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                           
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+readedTest.cpp: readerProc(): wrongPackets=0                                                                                
+SpaceWire_threadedswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                        
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1760                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2058                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 56, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2058                     
+swic.c: swic_read(): swic_avail_size = 56, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32664                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 272                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+Test.cpp: readerProc(): CONNECTED                                                                                           
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadedTest.cswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                               
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+pp: readerProc(): wrongPackets=0                                                                                            
+SpaceWire_threswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                            
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1768                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2060                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 48, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2060                     
+swic.c: swic_read(): swic_avail_size = 48, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32656                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 264                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+adedTest.cpp: readerProc(): CONNECTED                                                                                       
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadedTeswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                   
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+st.cpp: readerProc(): wrongPackets=0                                                                                        
+SpaceWire_swic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                                
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1770                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2068                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 40, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2068                     
+swic.c: swic_read(): swic_avail_size = 40, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32648                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 256                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+threadedTest.cpp: readerProc(): CONNECTED                                                                                   
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_threadswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                       
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+edTest.cpp: readerProc(): wrongPackets=0                                                                                    
+SpaceWswic.c: swic_read(): Invoked, major=0x2, minor=0x0                                                                    
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1778                                                                      
+swic.c: swic_read(): pdesc->type = 1                                                                                        
+swic.c: swic_read(): === swic_read, processing packet                                                                       
+swic.c: swic_read(): pdata = A00D2070                                                                                       
+swic.c: swic_avail_size(): swic_avail_size: sz = 32, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2070                     
+swic.c: swic_read(): swic_avail_size = 32, rest = 1                                                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32640                                         
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 248                                           
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 1                                                         
+ire_threadedTest.cpp: readerProc(): CONNECTED                                                                               
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=0, from addr=128, firts 32 bytes:                       
+SpaceWire_threadedTest.cpp: readerProc(): recv() returned -1                                                                
+SpaceWire_thswic.c: swic_control(): Invoked, major=0x2, minor=0x0                                                           
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620                                             
+readedTest.cpp: readerProc(): wrongPackets=0
+SpaceWire_threadedswic.c: swic_read(): Invoked, major=0x2, minor=0x0
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1780
+swic.c: swic_read(): pdesc->type = 1
+swic.c: swic_read(): === swic_read, processing packet
+swic.c: swic_read(): pdata = A00D2078
+swic.c: swic_avail_size(): swic_avail_size: sz = 24, DMA CSR = 0FEB2001, IR = 000D2090, addr = 000D2078
+swic.c: swic_read(): swic_avail_size = 24, rest = 2
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 32632
+swic.c: swic_move_reader_p(): swic_move_reader_p, distance = 8, size_to_end = 240
+swic.c: swic_read(): === swic_read exit, channel = 0, completed = 2
+Test.cpp: readerProc(): CONNECTED
+SpaceWire_threadedTest.cpp: readerProc(): <- Received a packet size=1, from addr=224, firts 32 bytes:
+0xE0 0x41 0x20 0xF 0xD 0x93 0xBE 0xA9 0xAD 0x44 0x40 0x87 0x69 0xDA 0x38 0xAE 0xE4 0x66 0xD5 0xAF 0xBC 0xAF 0xD3 0x2B 0x8 0 
+SpaceWire_threadedTest.cswic.c: swic_control(): Invoked, major=0x2, minor=0x0
+swic.c: swic_control(): SPW_IS_CONNECTED request, swic_connected() return 0x620
+pp: readerProc(): wrongPackets=0
+SpaceWire_threswic.c: swic_read(): Invoked, major=0x2, minor=0x0
+swic.c: swic_read(): === channel = 0, pdesc=0xA00D1788
+swic.c: swic_read(): === swic_read, channel = 0, no data
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA800) = 00003001, second empty: 1, dma i0
+swic.c: swic_start_rx_dma_if_needed(): swic_start_rx_dma_if_needed, SWIC_DMA_RUN(0xA840) = 0FEB2001, second empty: 1, dma i0
+swic.c: swic_read(): === swic_read, channel = 0, waiting for a packet
+swic.c: swic_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FEB2001
+swic.c: swic_read(): === swic_read, channel = 0, waiting done
+swic.c: swic_read(): === swic_read, channel = 0, waiting for a packet
+swic.c: swic_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FEB2001
+adedTest.cpp: readerProc(): CONNECTED 

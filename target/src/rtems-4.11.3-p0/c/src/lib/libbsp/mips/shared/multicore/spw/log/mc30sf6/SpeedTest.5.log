@@ -1,0 +1,81 @@
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                                         
+***SpaceWire threaded test***                                                                                                         
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                                                  
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                                                 
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007EFB8                                                             
+mcspw.c: mcspw_open(): MASKR2 = 00000000, QSTR2 = 00000000                                                                            
+mcspw.c: spw_start(): Setup transmit speed:                                                                                           
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(0) = 000C0B02                                                                                  
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(1) = 000C0B02                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(2) = 001326E0                                                                                  
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(2) = 00003FC1                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(3) = 001326E0                                                                                  
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(3) = 00003FC1                                                                                  
+mcspw.c: spw_start(): Setup receive speed:                                                                                            
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(2) = 00132699                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(3) = 001C0299                                                                                  
+mcspw.c: spw_start(): MC_SPW_MODE_CR(4) = 02C83419                                                                                    
+mcspw.c: spw_start(): MC_SPW_MODE_CR(5) = 02C83419                                                                                    
+mcspw.c: spw_start(): MC_MODE_R = 0x280000B                                                                                           
+mcspw.c: spw_start(): Setup link connection:                                                                                          
+mcspw.c: spw_start(): MC_SPW_MODE_CR(0) = 0000340E                                                                                    
+mcspw.c: spw_start(): MC_SPW_MODE_CR(1) = 0000340E                                                                                    
+mcspw.c: spw_start(): MC_SPW_MODE_CR(4) = 0000341E                                                                                    
+mcspw.c: spw_start(): MC_SPW_MODE_CR(5) = 0000341E                                                                                    
+mcspw.c: mcspw_open(): Done                                                                                                           
+ThreadedSpaceWireRw.cpp: readerProc(): Setting up speed to 10Mbit/s                                                                   
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                               
+mcspw.c: mcspw_control(): SPW_SET_SPEED request, data[0]=10                                                                           
+ThreadedSpaceWireRw.cpp: readerProc(): setTxSpeed() returned 0                                                                        
+ThreadedSpaceWireRw.cpp: readerProc(): Start reading...                                                                               
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                               
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750                                                                                     
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x1                                                        
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750                                                                                     
+ThreadedSpaceWireRw.cpp: readerProc(): CONNECTED                                                                                      
+mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x0                                                                                  
+mcspw.c: mcspw_read(): === channel = 0, pdesc=0x8007EF38                                                                              
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750                                                                                     
+mcspw.c: mcspw_read(): === spw_read, channel = 0, no data                                                                             
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xA800) = 00000000, second empty: 1, dma idx: 0, rd idx: 0    
+mcspw.c: start_dma(): start_dma 0xA800, dma_idx = 1                                                                                   
+mcspw.c: start_dma(): pcur->chain_addr = 8007F038                                                                                     
+mcspw.c: start_dma(): First CSR in chain: 00003001                                                                                    
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xA840) = 00000000, second empty: 1, dma idx: 0, rd idx: 0    
+mcspw.c: start_dma(): start_dma 0xA840, dma_idx = 1                                                                                   
+mcspw.c: start_dma(): pcur->chain_addr = 00000000                                                                                     
+mcspw.c: start_dma(): pcur->buf = 800870B8                                                                                            
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet                                                                
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001                                                         
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFE2001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFD2001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFC2001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFB2001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFA2001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FF92001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00002001, RX DATA DMA CSR = 0FF82001
+mcspw.c: spw_dma_rx_desc_ih(): Descriptor has been received, pdesc=0x8007EF38, type=0x0
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting done
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = FFFF2000, RX DATA DMA CSR = 0FF72001 

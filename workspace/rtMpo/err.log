@@ -1,0 +1,1 @@
+When profiles is switched, state of CSysMpoMachine's task (currently being executed) should be switched in old and new profiles too.

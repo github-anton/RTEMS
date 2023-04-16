@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/PATH/value=/usr/local/bin\:/usr/bin\:/bin\:/usr/games\:/usr/lib64/kf5\:/usr/lib64/kde4/libexec\:/usr/lib64/qt/bin\:/usr/lib64/qt5/bin\:${ProjDirPath}
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/ProjDirPath/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/ProjDirPath/operation=append
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/ProjDirPath/value=${ProjDirPath}
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/append=true
+environment/project/cdt.managedbuild.config.gnu.exe.debug.657311626/appendContributed=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.346899198/PATH/delimiter=\:
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.346899198/PATH/operation=append
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.346899198/PATH/value=$PATH\:${ProjDirPath}
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.346899198/append=true
+environment/project/cdt.managedbuild.toolchain.gnu.cross.base.346899198/appendContributed=true

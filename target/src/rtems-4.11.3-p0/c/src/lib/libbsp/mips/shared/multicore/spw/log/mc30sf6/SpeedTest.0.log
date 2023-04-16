@@ -1,0 +1,60 @@
+Welcome to minicom 2.7.1                                                                                                             
+
+OPTIONS: I18n                                                                                                                        
+Compiled on Apr 13 2018, 08:09:10.                                                                                                   
+Port /dev/ttyUSB1, 15:22:03                                                                                                          
+
+Press CTRL-A Z for help on special keys                                                                                              
+
+Clock_mask: 8000                                                                                                                     
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                                          
+Unhandled exception 11                                                                                                               
+
+
+
+
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                                          
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                                        
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                                                 
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                                                
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007D3C8                                                            
+mcspw.c: mcspw_open(): MASKR2 = F7F7F725, QSTR2 = 00000000                                                                           
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(0) = 000C0B02                                                                                 
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(0) = 00001FC1                                                                                 
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(0) = 00000000                                                                                 
+mcspw.c: mcspw_open(): Done                                                                                                          
+SpaceWire_speedTest.cpp: main(): Waiting for connection...                                                                           
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0                                                       
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0                                                                              
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x0 

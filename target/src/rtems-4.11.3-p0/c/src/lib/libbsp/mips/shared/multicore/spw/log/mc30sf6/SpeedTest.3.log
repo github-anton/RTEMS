@@ -1,0 +1,86 @@
+Welcome to minicom 2.7.1                                                                                                              
+
+OPTIONS: I18n                                                                                                                         
+Compiled on Apr 13 2018, 08:09:10.                                                                                                    
+Port /dev/ttyUSB1, 10:48:45                                                                                                           
+
+Press CTRL-A Z for help on special keys                                                                                               
+
+Clock_mask: 8000                                                                                                                      
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                                           
+mcspw.c: mcspw_initialize(): & MC_ROUTING_TABLE[0] = 0xB82FA400                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_ADG[0] = 0xB82FA0EC                                                                            
+
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_CSR(0) = 0xB82FA8C0                                                                    
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_CP(0) = 0xB82FA8C4                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_IR(0) = 0xB82FA8C8                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_RUN(0) = 0xB82FA8CC                                                                    
+
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_CSR(0) = 0xB82FA880                                                                    
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_CP(0) = 0xB82FA884                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_IR(0) = 0xB82FA888                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_RUN(0) = 0xB82FA88C                                                                    
+
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_SPEED(0) = 0xB82FA0BC                                                                       
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_SPEED(1) = 0xB82FA0C0                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_TX_SPEED(2) = 0xB82FA0CC                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_PMA_MODE(2) = 0xB82FA11C                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_TX_SPEED(3) = 0xB82FA0D0                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_PMA_MODE(3) = 0xB82FA120                                                                       
+
+mcspw.c: mcspw_initialize(): & MC_SPW_MODE_CR(4) = 0xB82FA0B4                                                                         
+mcspw.c: mcspw_initialize(): & MC_SPW_MODE_CR(5) = 0xB82FA0B8                                                                         
+mcspw.c: mcspw_initialize(): & MC_MODE_R = 0xB82FA00C                                                                                 
+mcspw.c: mcspw_form_routing_table(): Forming routing table...                                                                         
+mcspw.c: mcspw_form_routing_table(): MC_ROUTING_TABLE[16]={                                                                           
+0x81, 0x82, 0x84, 0x88, 0x90, 0xA0, 0xC0, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, }                                     
+mcspw.c: mcspw_gspw_form_adg(): Form adg...                                                                                           
+mcspw.c: mcspw_gspw_form_adg(): MC_GSPW_ADG[6]={0x2, 0x4, 0x8, 0x10, 0x20, 0x40, }                                                    
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                                         
+***SpaceWire threaded test***                                                                                                         
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                                                  
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                                                 
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007EB98                                                             
+mcspw.c: mcspw_open(): MASKR2 = F7F7F725, QSTR2 = 00000000                                                                            
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(0) = 000C0B02                                                                                  
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(1) = 000C0B02                                                                                  
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(2) = 00003FC1                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(2) = 001C0299                                                                                  
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(3) = 00003FC1                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(3) = 00132699                                                                                  
+mcspw.c: spw_start(): MC_MODE_R=0x280000B                                                                                             
+mcspw.c: mcspw_open(): Done
+ThreadedSpaceWireRw.cpp: writerProc(): Setting up speed to 200Mbit/s
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_control(): SPW_SET_SPEED request, data[0]=200
+ThreadedSpaceWireRw.cpp: writerProc(): setTxSpeed() returned 0
+ThreadedSpaceWireRw.cpp: writerProc(): Start writing...
+ThreadedSpaceWireRw.cpp: writerProc(): ========== Frame 0 ===========
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x1
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750
+ThreadedSpaceWireRw.cpp: writerProc(): CONNECTED
+ThreadedSpaceWireRw.cpp: writerProc(): -> Send a packet no=0 size=4095
+mcspw.c: mcspw_write(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_write(): === channel = 0, size = 4096
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750
+mcspw.c: mcspw_write(): MASKR2 = F7F7F725, prev tx_desc = 00000000
+mcspw.c: mcspw_write(): tp1, TX_DATA_RUN = 00000000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): transmit: TX_DATA_IR = 0007DB18, TX_DESC_IR = 0007DB18, channel 0
+mcspw.c: mcspw_write(): tp2, TX_DATA_RUN = 01F72001, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): Check DMA: TX_DATA_RUN = FFFFE000, TX_DESC_RUN = FFFF8000, channel 0
+mcspw.c: mcspw_write(): === spw_write exit, channel = 0, completed = 4096
+ThreadedSpaceWireRw.cpp: writerProc(): Sending time=141.000000 ms

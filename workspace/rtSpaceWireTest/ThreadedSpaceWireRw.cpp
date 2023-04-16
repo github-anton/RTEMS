@@ -77,6 +77,8 @@ void *readerProc(void *arg) {
                 	pReader->sendTo(&fromAddr, packet, sizeof(th_packet_hdr_t)) ;
                 }
 #endif
+            } else {
+            	DTRACE("recv() returned -1\n") ;
             }
 		} else {
 			DTRACE("DISCONNECTED\n") ;

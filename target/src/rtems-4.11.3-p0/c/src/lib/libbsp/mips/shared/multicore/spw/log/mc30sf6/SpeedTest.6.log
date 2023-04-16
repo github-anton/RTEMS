@@ -1,0 +1,93 @@
+Welcome to minicom 2.7.1                                                                                                              
+
+OPTIONS: I18n                                                                                                                         
+Compiled on Apr 13 2018, 08:09:10.                                                                                                    
+Port /dev/ttyUSB1, 13:43:34                                                                                                           
+
+Press CTRL-A Z for help on special keys                                                                                               
+
+Clock_mask: 8000                                                                                                                      
+
+mcspw.c: mcspw_initialize(): rtems_io_register_name(minor=0x0, path=/dev/spw0) returned 0x0                                           
+mcspw.c: mcspw_initialize(): Check register's addresses:                                                                              
+mcspw.c: mcspw_initialize(): & MC_ROUTING_TABLE[0] = 0xB82FA400                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_ADG[0] = 0xB82FA0EC                                                                            
+
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_CSR(0) = 0xB82FA8C0                                                                    
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_CP(0) = 0xB82FA8C4                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_IR(0) = 0xB82FA8C8                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DATA_RUN(0) = 0xB82FA8CC                                                                    
+
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_CSR(0) = 0xB82FA880                                                                    
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_CP(0) = 0xB82FA884                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_IR(0) = 0xB82FA888                                                                     
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_DESC_RUN(0) = 0xB82FA88C                                                                    
+
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_SPEED(0) = 0xB82FA0BC                                                                       
+mcspw.c: mcspw_initialize(): & MC_SWIC_TX_SPEED(1) = 0xB82FA0C0                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_TX_SPEED(2) = 0xB82FA0CC                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_PMA_MODE(2) = 0xB82FA11C                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_TX_SPEED(3) = 0xB82FA0D0                                                                       
+mcspw.c: mcspw_initialize(): & MC_GSPW_PMA_MODE(3) = 0xB82FA120                                                                       
+
+mcspw.c: mcspw_initialize(): & MC_SPW_MODE_CR(0) = 0xB82FA0A4                                                                         
+mcspw.c: mcspw_initialize(): & MC_SPW_MODE_CR(1) = 0xB82FA0A8                                                                         
+mcspw.c: mcspw_initialize(): & MC_SPW_MODE_CR(4) = 0xB82FA0B4                                                                         
+mcspw.c: mcspw_initialize(): & MC_SPW_MODE_CR(5) = 0xB82FA0B8                                                                         
+mcspw.c: mcspw_initialize(): & MC_MODE_R = 0xB82FA00C                                                                                 
+mcspw.c: mcspw_form_routing_table(): Forming routing table...                                                                         
+mcspw.c: mcspw_form_routing_table(): MC_ROUTING_TABLE[16]={                                                                           
+0x81, 0x82, 0x84, 0x88, 0x90, 0xA0, 0xC0, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0x1, 0x2, 0x4, 0x0, 0x0, 0x0, 0x0, 0x}
+mcspw.c: mcspw_gspw_form_adg(): Form adg...                                                                                           
+mcspw.c: mcspw_gspw_form_adg(): MC_GSPW_ADG[6]={0x2, 0x4, 0x8, 0x10, 0x20, 0x40}                                                      
+
+
+*** BEGIN OF TEST Multicore SpaceWire C++ ***                                                                                         
+***SpaceWire threaded test***                                                                                                         
+mcspw.c: mcspw_open(): Invoked, major=0x2, minor=0x0                                                                                  
+mcspw.c: spw_struct_init(): spw_struct_init, port = 0                                                                                 
+mcspw.c: spw_struct_init(): CSR in chain: 00003001, chain addr = 8007EF58                                                             
+mcspw.c: mcspw_open(): MASKR2 = 00000000, QSTR2 = 00000000                                                                            
+mcspw.c: spw_start(): Setup transmit speed:                                                                                           
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(0) = 000C0B02                                                                                  
+mcspw.c: spw_start(): MC_SWIC_TX_SPEED(1) = 000C0B02                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(2) = 001326E0                                                                                  
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(2) = 00003FC1                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(3) = 001326E0                                                                                  
+mcspw.c: spw_start(): MC_GSPW_TX_SPEED(3) = 00003FC1                                                                                  
+mcspw.c: spw_start(): Setup receive speed:                                                                                            
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(2) = 00132699                                                                                  
+mcspw.c: spw_start(): MC_GSPW_PMA_MODE(3) = 001C0299                                                                                  
+mcspw.c: spw_start(): MC_SPW_MODE_CR(4) = 02C83419                                                                                    
+mcspw.c: spw_start(): MC_SPW_MODE_CR(5) = 02C83419
+mcspw.c: spw_start(): MC_MODE_R = 0x280000B
+mcspw.c: spw_start(): Setup link connection:
+mcspw.c: spw_start(): MC_SPW_MODE_CR(0) = 0000340E
+mcspw.c: spw_start(): MC_SPW_MODE_CR(1) = 0000340E
+mcspw.c: spw_start(): MC_SPW_MODE_CR(4) = 0000341E
+mcspw.c: spw_start(): MC_SPW_MODE_CR(5) = 0000341E
+mcspw.c: mcspw_open(): Done
+ThreadedSpaceWireRw.cpp: readerProc(): Setting up speed to 10Mbit/s
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_control(): SPW_SET_SPEED request, data[0]=10
+ThreadedSpaceWireRw.cpp: readerProc(): setTxSpeed() returned 0
+ThreadedSpaceWireRw.cpp: readerProc(): Start reading...
+mcspw.c: mcspw_control(): Invoked, major=0x2, minor=0x0
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750
+mcspw.c: mcspw_control(): SPW_IS_CONNECTED request, spw_connected() return 0x1
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750
+ThreadedSpaceWireRw.cpp: readerProc(): CONNECTED
+mcspw.c: mcspw_read(): Invoked, major=0x2, minor=0x0
+mcspw.c: mcspw_read(): === channel = 0, pdesc=0x8007EED8
+mcspw.c: spw_connected(): MC_SWIC_STATUS(0)=0x750
+mcspw.c: mcspw_read(): === spw_read, channel = 0, no data
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xA800) = 00000000, second empty: 1, dma idx: 0, rd idx: 0
+mcspw.c: start_dma(): start_dma 0xA800, dma_idx = 1
+mcspw.c: start_dma(): pcur->chain_addr = 8007EFD8
+mcspw.c: start_dma(): First CSR in chain: 00003001
+mcspw.c: start_rx_dma_if_needed(): start_rx_dma_if_needed, SWIC_DMA_RUN(0xA840) = 00000000, second empty: 1, dma idx: 0, rd idx: 0
+mcspw.c: start_dma(): start_dma 0xA840, dma_idx = 1
+mcspw.c: start_dma(): pcur->chain_addr = 00000000
+mcspw.c: start_dma(): pcur->buf = 80087058
+mcspw.c: mcspw_read(): === spw_read, channel = 0, waiting for a packet
+mcspw.c: mcspw_read(): RX DESC DMA CSR = 00003001, RX DATA DMA CSR = 0FFF2001
